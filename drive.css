@@ -310,6 +310,418 @@ img, video, iframe {
 
 
 
+/* ===== Test-Drive Hero Section ===== */
+.testdrive-hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  min-height: 400px;
+  background: url('https://via.placeholder.com/1600x900.png?text=Test+Drive+Background') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.testdrive-hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.testdrive-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 2rem;
+  max-width: 800px;
+  opacity: 0;
+  animation: fade-in-up 1s ease-out forwards;
+}
+
+.testdrive-hero__title {
+  font-size: 2.75rem;
+  margin-bottom: 1rem;
+}
+
+.testdrive-hero__subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.testdrive-hero__buttons .btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin: 0 0.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background-color: white;
+  color: #333;
+}
+
+/* Fade-in animation */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testdrive-hero__title {
+    font-size: 2.25rem;
+  }
+  .testdrive-hero__subtitle {
+    font-size: 1.1rem;
+  }
+  .testdrive-hero__buttons .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Available Models (Test Drive) Section ===== */
+.testdrive-models {
+  padding: 4rem 2rem;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.testdrive-models .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testdrive-models h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Filter Buttons */
+.filters {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border: 2px solid #333;
+  background: white;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #333;
+  color: white;
+}
+
+/* Models Grid */
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.model-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.model-item:hover {
+  transform: translateY(-5px);
+}
+
+.model-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.model-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.btn-book {
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.btn-book:hover {
+  background: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testdrive-models h2 {
+    font-size: 2rem;
+  }
+
+  .filter-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-book {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== How Test Drive Works Section ===== */
+.how-testdrive-works {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.how-testdrive-works .container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.how-testdrive-works h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+/* Steps layout */
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.step {
+  flex: 1 1 200px;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+}
+
+.step-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.step-number {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #007bff;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.step-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.step-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #666;
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  .steps {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .how-testdrive-works h2 {
+    font-size: 2rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Booking Form Styles ===== */
+.booking-form-section {
+  padding: 4rem 2rem;
+  background-color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.booking-form-section .container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.booking-form-section h2 {
+  text-align: center;
+  font-size: 2.25rem;
+  margin-bottom: 2rem;
+}
+
+.booking-form .form-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.booking-form .form-group {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.booking-form .form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.booking-form .form-group input,
+.booking-form .form-group select,
+.booking-form .form-group textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.booking-form .form-group textarea {
+  resize: vertical;
+}
+
+.btn-submit {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .booking-form .form-row {
+    flex-direction: column;
+  }
+
+  .booking-form .form-group {
+    flex: 1 1 100%;
+  }
+}
+
+
+
+
+
+
+
 
 /* Base reset for footer */
 .auto-footer {

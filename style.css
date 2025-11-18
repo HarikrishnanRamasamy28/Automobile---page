@@ -309,9 +309,964 @@ img, video, iframe {
 
 
 
+/* ========== Hero Section CSS ========== */
+
+/* Keyframes for initial jump animation */
+@keyframes jump-once {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Hero container */
+.hero-automobile {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: orange;
+  /* background: url('https://via.placeholder.com/1920x1080.png?text=Car+Hero+Background') center / cover no-repeat; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* Overlay to darken background for better contrast */
+/* .hero-automobile::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+} */
+
+/* Inner container to hold content and image */
+.hero-automobile .hero-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+/* Left side (text) */
+.hero-automobile .hero-left {
+  flex: 1;
+  padding-right: 2rem;
+  animation-name: jump-once;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.hero-automobile .hero-left h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-automobile .hero-left p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-automobile .hero-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.hero-automobile .hero-features li {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.hero-automobile .hero-features li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #ffcc00;
+}
+
+.hero-automobile .hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-automobile .btn-primary,
+.hero-automobile .btn-secondary {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.hero-automobile .btn-primary {
+  background-color: #ff5722;
+  color: white;
+}
+
+.hero-automobile .btn-primary:hover {
+  background-color: #e64a19;
+}
+
+.hero-automobile .btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.hero-automobile .btn-secondary:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Right side (image) */
+.hero-automobile .hero-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-automobile .hero-right img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  animation-name: jump-once;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+/* Media query for small screens <= 450px */
+@media (max-width: 450px) {
+  .hero-automobile {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    height: auto;
+  }
+
+  .hero-automobile .hero-container {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .hero-automobile .hero-left {
+    padding: 1rem 0;
+    animation: jump-once-small 1.2s ease-in-out 1 forwards;
+  }
+
+  .hero-automobile .hero-right img {
+    width: 100%;
+    animation: jump-once-small 1.2s ease-in-out 1 forwards;
+  }
+
+  @keyframes jump-once-small {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .hero-automobile .hero-left h1 {
+    font-size: 2rem;
+  }
+
+  .hero-automobile .hero-left p {
+    font-size: 1rem;
+  }
+
+  .hero-automobile .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-automobile .btn-primary,
+  .hero-automobile .btn-secondary {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
 
 
 
+
+
+
+
+
+
+
+
+/* ========== About Us Section Styles ========== */
+
+.about-us {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.about-values {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.value-box {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  flex: 1;
+}
+
+.value-box h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.value-box p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.about-image {
+  flex: 1;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about-values {
+    flex-direction: column;
+  }
+  
+  .value-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .about-us {
+    padding: 3rem 1rem;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  .value-box {
+    padding: 1rem;
+  }
+
+  .value-box h3 {
+    font-size: 1.2rem;
+  }
+
+  .value-box p {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Common Container Styling ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ===== Why Choose Us Section ===== */
+.why-choose-us {
+  background-color: #f5f5f5;
+  padding: 4rem 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.why-choose-us h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.why-choose-us .brand-name {
+  color: #ff5722; /* change to your brand color */
+}
+
+.why-choose-us .why-subtext {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.why-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.why-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 220px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.why-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.why-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.why-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.why-item p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* ===== Our Services Section ===== */
+.our-services {
+  padding: 4rem 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.our-services h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ff5722; /* same brand color */
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .why-items {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 450px) {
+  .why-choose-us h2,
+  .our-services h2 {
+    font-size: 2rem;
+  }
+
+  .why-item, .service-card {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .why-item h3, .service-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .why-item p, .service-card p {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* ===== In The News Section ===== */
+.in-the-news {
+  padding: 4rem 2rem;
+  background-color: #fafafa;
+  font-family: Arial, sans-serif;
+}
+
+.in-the-news .container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.in-the-news h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #333;
+}
+
+/* News Items List */
+.news-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.news-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.news-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.news-item a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.news-title {
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+  color: #222;
+}
+
+.news-date {
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 1rem;
+}
+
+.news-summary {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #555;
+}
+
+/* View More Link */
+.view-more {
+  display: block;
+  width: max-content;
+  margin: 3rem auto 0;
+  background-color: #ff5722;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.view-more:hover {
+  background-color: #e64a19;
+}
+
+/* ===== Slide-in Animation ===== */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to each news item with stagger */
+.news-item {
+  opacity: 0;
+  animation: slide-up 0.6s ease-out forwards;
+}
+
+.news-item:nth-child(1) { animation-delay: 0.2s; }
+.news-item:nth-child(2) { animation-delay: 0.4s; }
+.news-item:nth-child(3) { animation-delay: 0.6s; }
+/* if more items, continue increasing delay */
+
+/* Responsive */
+@media (max-width: 600px) {
+  .in-the-news h2 {
+    font-size: 2rem;
+  }
+
+  .news-summary {
+    font-size: 0.95rem;
+  }
+
+  .view-more {
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Shared Styles ===== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== Compare Cars / Model Comparisons ===== */
+.compare-cars {
+  padding: 4rem 0;
+  background-color: #f7f7f7;
+}
+
+.compare-cars h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: slide-in 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.comparison-table th {
+  background-color: #eaeaea;
+  font-weight: bold;
+}
+
+.comparison-table tbody tr {
+  opacity: 0;
+  animation: slide-in 0.8s ease-out forwards;
+}
+
+/* Stagger row animations */
+.comparison-table tbody tr:nth-child(1) { animation-delay: 0.4s; }
+.comparison-table tbody tr:nth-child(2) { animation-delay: 0.6s; }
+.comparison-table tbody tr:nth-child(3) { animation-delay: 0.8s; }
+.comparison-table tbody tr:nth-child(4) { animation-delay: 1s; }
+.comparison-table tbody tr:nth-child(5) { animation-delay: 1.2s; }
+
+/* ===== Buying Guides ===== */
+.buying-guides {
+  padding: 4rem 0;
+  background-color: #ffffff;
+}
+
+.buying-guides h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: slide-in 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.guides-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.guides-list li {
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: slide-in 0.8s ease-out forwards;
+}
+
+.guides-list li:nth-child(1) { animation-delay: 0.4s; }
+.guides-list li:nth-child(2) { animation-delay: 0.6s; }
+.guides-list li:nth-child(3) { animation-delay: 0.8s; }
+.guides-list li:nth-child(4) { animation-delay: 1s; }
+.guides-list li:nth-child(5) { animation-delay: 1.2s; }
+
+.guides-list li a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.guides-list li a:hover {
+  color: #0056b3;
+}
+
+/* ===== Slide-In Keyframes ===== */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .comparison-table th, .comparison-table td {
+    padding: 0.75rem;
+  }
+  .compare-cars h2,
+  .buying-guides h2 {
+    font-size: 2rem;
+  }
+  .guides-list li a {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Newsletter Signup Styles ===== */
+
+.newsletter-signup {
+  background-color: #f1f5f9;
+  padding: 4rem 2rem;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.newsletter-signup .container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletter-signup h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #0f172a;
+  opacity: 0;
+  animation: slide-in 0.8s ease-out forwards;
+}
+
+.newsletter-signup p {
+  color: #334155;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: slide-in 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  opacity: 0;
+  animation: slide-in 0.8s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.newsletter-form input[type="email"]:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+.newsletter-form button {
+  padding: 1rem;
+  background-color: #2563eb;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: #1d4ed8;
+}
+
+.newsletter-note {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #64748b;
+  opacity: 0;
+  animation: slide-in 0.8s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+/* ===== Slide-In Animation Keyframes ===== */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (min-width: 576px) {
+  .newsletter-form {
+    flex-direction: row;
+  }
+
+  .newsletter-form input[type="email"] {
+    flex-grow: 1;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: -1px; /* to connect with button */
+  }
+
+  .newsletter-form button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Car Care Tips Section ===== */
+.car-care-tips {
+  background-color: #f8f9fa;
+  padding: 4rem 2rem;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.car-care-tips .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.car-care-tips h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: slide-in 0.8s ease-out forwards;
+}
+
+.car-care-tips .intro {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #555;
+  opacity: 0;
+  animation: slide-in 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.tips-list {
+  list-style: inside disc;
+  padding: 0;
+  margin: 0;
+}
+
+.tips-list li {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: slide-in 0.8s ease-out forwards;
+}
+
+/* Stagger animation for each tip */
+.tips-list li:nth-child(1) { animation-delay: 0.4s; }
+.tips-list li:nth-child(2) { animation-delay: 0.6s; }
+.tips-list li:nth-child(3) { animation-delay: 0.8s; }
+.tips-list li:nth-child(4) { animation-delay: 1s; }
+.tips-list li:nth-child(5) { animation-delay: 1.2s; }
+.tips-list li:nth-child(6) { animation-delay: 1.4s; }
+.tips-list li:nth-child(7) { animation-delay: 1.6s; }
+.tips-list li:nth-child(8) { animation-delay: 1.8s; }
+.tips-list li:nth-child(9) { animation-delay: 2s; }
+.tips-list li:nth-child(10) { animation-delay: 2.2s; }
+
+/* ===== Slide-in Keyframes ===== */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .car-care-tips h2 {
+    font-size: 2rem;
+  }
+
+  .car-care-tips .intro {
+    font-size: 1rem;
+  }
+
+  .tips-list li {
+    font-size: 0.95rem;
+  }
+}
 
 
 

@@ -309,6 +309,532 @@ img, video, iframe {
 
 
 
+/* ===== Featured Models Hero ===== */
+.featured-models-hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 500px;
+  background-color: orange;
+  /* background: url('https://via.placeholder.com/1600x900.png?text=Car+Background') center/cover no-repeat; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.featured-models-hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+
+.featured-models-hero .content-wrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.text-content {
+  flex: 1;
+  max-width: 600px;
+  animation: slide-in-left 1s ease-out forwards;
+  opacity: 0;
+}
+
+.text-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.text-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons a {
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-right: 1rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-primary {
+  background-color: #ff5722;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #e64a19;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background-color: white;
+  color: black;
+}
+
+.image-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  animation: slide-in-right 1s ease-out forwards;
+  opacity: 0;
+}
+
+.image-content img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* ===== Animations ===== */
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .featured-models-hero .content-wrapper {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .text-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .text-content p {
+    font-size: 1.1rem;
+  }
+
+  .hero-buttons a {
+    margin-bottom: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Featured Models / Our Cars Section ===== */
+.featured-models {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.featured-models .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.featured-models h2 {
+  font-size: 2.75rem;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  animation: fade-slide 0.8s ease-out forwards;
+}
+
+.featured-models .intro {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #666;
+  opacity: 0;
+  animation: fade-slide 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.models-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.model-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fade-slide 0.8s ease-out forwards;
+}
+
+.model-card:nth-child(1) { animation-delay: 0.3s; }
+.model-card:nth-child(2) { animation-delay: 0.5s; }
+.model-card:nth-child(3) { animation-delay: 0.7s; }
+.model-card:nth-child(4) { animation-delay: 0.9s; }
+
+.model-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.model-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.model-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff5722;
+  margin-bottom: 1rem;
+}
+
+.model-desc {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.btn-model {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #ff5722;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.btn-model:hover {
+  background-color: #e64a19;
+}
+
+/* ===== Animation Keyframes ===== */
+@keyframes fade-slide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .featured-models h2 {
+    font-size: 2.25rem;
+  }
+
+  .featured-models .intro {
+    font-size: 1.1rem;
+  }
+
+  .model-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .model-price {
+    font-size: 1.1rem;
+  }
+
+  .model-desc {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.featured-gallery {
+  padding: 4rem 2rem;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.featured-gallery .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.featured-gallery h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  animation: fade-slide-gallery 0.8s ease-out forwards;
+}
+
+.featured-gallery .intro {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #666;
+  opacity: 0;
+  animation: fade-slide-gallery 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fade-slide-gallery 0.8s ease-out forwards;
+}
+
+.gallery-item:nth-child(1) { animation-delay: 0.3s; }
+.gallery-item:nth-child(2) { animation-delay: 0.5s; }
+.gallery-item:nth-child(3) { animation-delay: 0.7s; }
+.gallery-item:nth-child(4) { animation-delay: 0.9s; }
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 1rem;
+  transform: translateY(100%);
+  transition: transform 0.4s;
+}
+
+.gallery-item:hover .overlay {
+  transform: translateY(0);
+}
+
+.overlay h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.overlay p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-view {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #ff5722;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.btn-view:hover {
+  background-color: #e64a19;
+}
+
+@keyframes fade-slide-gallery {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .featured-gallery h2 {
+    font-size: 2rem;
+  }
+
+  .featured-gallery .intro {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Specs Comparison Section ===== */
+.models-specs {
+  padding: 4rem 2rem;
+  background: #f5f5f5;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.models-specs .container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.models-specs h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: slide-in 0.8s ease-out forwards;
+}
+
+/* Table wrapper for horizontal scroll on small screens */
+.specs-table-wrapper {
+  overflow-x: auto;
+}
+
+/* Specs table style */
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slide-in 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.specs-table th,
+.specs-table td {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.specs-table th {
+  background-color: #e0e0e0;
+  font-weight: bold;
+}
+
+.specs-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+}
+
+/* Alternate row background */
+.specs-table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.specs-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* ===== Slide-In Keyframes ===== */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .models-specs h2 {
+    font-size: 2rem;
+  }
+
+  .specs-table th,
+  .specs-table td {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
 
 
 /* Base reset for footer */

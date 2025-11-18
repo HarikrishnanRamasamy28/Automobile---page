@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <h2>CarAdmin</h2>
+      </div>
+      <nav class="sidebar-menu">
+        <a href="#" class="menu-item active"><i class="fa fa-chart-line"></i> Dashboard</a>
+        <a href="#" class="menu-item"><i class="fa fa-car"></i> Inventory</a>
+        <a href="#" class="menu-item"><i class="fa fa-users"></i> Customers</a>
+        <a href="#" class="menu-item"><i class="fa fa-file-invoice-dollar"></i> Finance</a>
+        <a href="#" class="menu-item"><i class="fa fa-calendar-check"></i> Test Drives</a>
+        <a href="#" class="menu-item"><i class="fa fa-cogs"></i> Settings</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Top Navbar -->
+      <header class="top-nav">
+        <div class="top-left">
+          <h1>Dashboard</h1>
+        </div>
+        <div class="top-right">
+          <div class="search-box">
+            <input type="text" placeholder="Search..." />
+            <i class="fa fa-search"></i>
+          </div>
+          <div class="profile">
+            <i class="fa fa-bell"></i>
+            <img src="https://via.placeholder.com/40" alt="Admin Profile" />
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Metrics Cards -->
+      <section class="cards">
+        <div class="card">
+          <h3>Total Vehicles</h3>
+          <p>120</p>
+        </div>
+        <div class="card">
+          <h3>Finance Applications</h3>
+          <p>45</p>
+        </div>
+        <div class="card">
+          <h3>Upcoming Test Drives</h3>
+          <p>12</p>
+        </div>
+        <div class="card">
+          <h3>New Customers</h3>
+          <p>30</p>
+        </div>
+      </section>
+
+      <!-- Recent Activity Table -->
+      <section class="table-section">
+        <h2>Recent Test Drives</h2>
+        <table class="dashboard-table">
+          <thead>
+            <tr>
+              <th>Customer</th>
+              <th>Model</th>
+              <th>Date / Time</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alice Johnson</td>
+              <td>Model X</td>
+              <td>2025-11-20 10:00 AM</td>
+              <td><span class="status confirmed">Confirmed</span></td>
+            </tr>
+            <tr>
+              <td>Bob Smith</td>
+              <td>Model 3</td>
+              <td>2025-11-22 3:00 PM</td>
+              <td><span class="status pending">Pending</span></td>
+            </tr>
+            <tr>
+              <td>Carol Lee</td>
+              <td>Model Y</td>
+              <td>2025-11-25 1:00 PM</td>
+              <td><span class="status canceled">Canceled</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </div> <!-- / main-content -->
+  </div> <!-- / dashboard -->
+
+</body>
+</html>

@@ -58,6 +58,193 @@
 
 
 
+<section class="testdrive-hero">
+  <div class="testdrive-hero__overlay"></div>
+  <div class="testdrive-hero__content">
+    <h1 class="testdrive-hero__title">Book Your Test Drive</h1>
+    <p class="testdrive-hero__subtitle">
+      Experience convenience and a personalized journey — test drive what suits you best.
+    </p>
+    <div class="testdrive-hero__buttons">
+      <a href="/schedule" class="btn btn-primary">Schedule Now</a>
+      <a href="/availability" class="btn btn-secondary">Check Availability</a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section class="testdrive-models">
+  <div class="container">
+    <h2>Available Models for Test Drive</h2>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="sedan">Sedan</button>
+      <button class="filter-btn" data-filter="suv">SUV</button>
+      <button class="filter-btn" data-filter="electric">Electric</button>
+    </div>
+
+    <div class="models-grid">
+      <div class="model-item sedan" data-make="BrandA">
+        <img src="https://via.placeholder.com/300x200.png?text=Model+Sedan+A" alt="Model Sedan A" />
+        <h3>Model Sedan A</h3>
+        <button class="btn-book">Book</button>
+      </div>
+      <div class="model-item suv" data-make="BrandB">
+        <img src="https://via.placeholder.com/300x200.png?text=Model+SUV+B" alt="Model SUV B" />
+        <h3>Model SUV B</h3>
+        <button class="btn-book">Book</button>
+      </div>
+      <div class="model-item electric sedan" data-make="BrandC">
+        <img src="https://via.placeholder.com/300x200.png?text=Model+Electric+C" alt="Model Electric C" />
+        <h3>Model Electric C</h3>
+        <button class="btn-book">Book</button>
+      </div>
+      <div class="model-item suv electric" data-make="BrandA">
+        <img src="https://via.placeholder.com/300x200.png?text=Model+SUV+Electric+D" alt="Model SUV Electric D" />
+        <h3>Model SUV Electric D</h3>
+        <button class="btn-book">Book</button>
+      </div>
+      <!-- Add more model-item divs as needed -->
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="how-testdrive-works">
+  <div class="container">
+    <h2>How the Test Drive Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">🚗</div>
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Choose a Model</h3>
+          <p>Select the car model you want to test drive from our available lineup.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">📅</div>
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Pick a Date & Time</h3>
+          <p>Use our scheduler to choose a convenient slot for your test drive.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">✅</div>
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Confirm the Appointment</h3>
+          <p>We will confirm your booking and send you a reminder before the drive.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">🏁</div>
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h3>Drive & Experience</h3>
+          <p>Take the wheel, experience the car, and feel the performance firsthand.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="booking-form-section">
+  <div class="container">
+    <h2>Book a Test Drive</h2>
+    <form class="booking-form" action="#" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+1 234 567 890" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="model">Preferred Model</label>
+          <select id="model" name="model" required>
+            <option value="" disabled selected>Select a model</option>
+            <option value="Model X">Model X</option>
+            <option value="Model Y">Model Y</option>
+            <option value="Model Z">Model Z</option>
+            <!-- Add more models as required -->
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="date">Preferred Date</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+        <div class="form-group">
+          <label for="time">Preferred Time</label>
+          <input type="time" id="time" name="time" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="branch">Preferred Branch / Location</label>
+        <select id="branch" name="branch" required>
+          <option value="" disabled selected>Select branch</option>
+          <option value="Downtown">Downtown</option>
+          <option value="Uptown">Uptown</option>
+          <option value="Suburban">Suburban</option>
+          <!-- Add more branches as needed -->
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="notes">Additional Notes</label>
+        <textarea id="notes" name="notes" placeholder="E.g., I'd like to test drive on the highway..." rows="4"></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Book Test Drive</button>
+    </form>
+  </div>
+</section>
+
 
 
 
