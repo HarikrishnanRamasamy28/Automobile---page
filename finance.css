@@ -159,6 +159,8 @@ img, video, iframe {
 .navBar {
   display: block;
   background-color:rgb(152, 9, 9) ;
+  /* background-color: orangered; */
+  height: 80px;
   border-top: 1px solid white;
   padding: 10px;
 }
@@ -212,7 +214,8 @@ img, video, iframe {
   transition: background 0.3s, color 0.3s;
 }
 .linkRight li a:hover {
-  color:#f0a500;
+  /* color:#555; */
+  color: #f0a500;
 }
 .linkRight li.sign button {
   background: red;
@@ -257,6 +260,7 @@ img, video, iframe {
   .navBar.active {
     display: block;
     background:rgb(152, 9, 9);
+    height: 60vh;
   }
   .navBar .navLinks {
     padding: 1rem;
@@ -316,7 +320,8 @@ img, video, iframe {
   width: 100%;
   height: 70vh;
   min-height: 400px;
-  background: url('https://via.placeholder.com/1600x900.png?text=Finance+Background') center/cover no-repeat;
+  background-color: rgb(247, 247, 247);
+  /* background: url('https://via.placeholder.com/1600x900.png?text=Finance+Background') center/cover no-repeat; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -325,7 +330,7 @@ img, video, iframe {
   font-family: Arial, sans-serif;
 }
 
-.finance-hero__overlay {
+/* .finance-hero__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -333,7 +338,7 @@ img, video, iframe {
   bottom: 0;
   background: rgba(0, 0, 0, 0.6);
   z-index: 1;
-}
+} */
 
 .finance-hero__content {
   position: relative;
@@ -348,12 +353,14 @@ img, video, iframe {
 .finance-hero__title {
   font-size: 2.75rem;
   margin-bottom: 1rem;
+  color: orangered;
 }
 
 .finance-hero__subtitle {
   font-size: 1.25rem;
   margin-bottom: 2rem;
   line-height: 1.5;
+  color: #555;
 }
 
 .finance-hero__buttons .btn {
@@ -367,23 +374,23 @@ img, video, iframe {
 }
 
 .btn-primary {
-  background-color: #28a745;
+  background-color: orangered;
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: #218838;
+  background-color:black;
 }
 
 .btn-secondary {
-  background-color: transparent;
+  background-color: black;
   color: white;
-  border: 2px solid white;
+  /* border: 2px solid white; */
 }
 
 .btn-secondary:hover {
-  background-color: white;
-  color: #333;
+  background-color: orangered;
+  color: white;
 }
 
 /* Animation */
@@ -427,13 +434,12 @@ img, video, iframe {
 /* ===== Finance Options Section ===== */
 .finance-options {
   padding: 4rem 2rem;
-  background-color: #f9fafb;
+  background-color: orangered;
   font-family: Arial, sans-serif;
   color: #333;
 }
 
 .finance-options .container {
-  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -443,19 +449,18 @@ img, video, iframe {
   margin-bottom: 2rem;
   opacity: 0;
   animation: fade-slide-up 0.8s ease-out forwards;
+  color: white;
 }
 
 .option-list {
-  display: grid;
-  grid-template-columns: 1fr;
+  display:flex;
+  flex-direction: row;
   gap: 2rem;
 }
 
 .option {
-  background: white;
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   opacity: 0;
   transform: translateY(30px);
   animation: fade-slide-up 0.8s ease-out forwards;
@@ -470,12 +475,33 @@ img, video, iframe {
   margin-top: 0;
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
+  color: white;
+  text-decoration: underline;
+  text-align: center;
+  /* Animation properties */
+  animation: pulse 2s ease-in-out infinite;
+  /* Optional: Improve performance by hinting what will change */
+  will-change: transform, opacity;
 }
-
+/* Define the pulse keyframes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 .option p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #555;
+  color: white;
 }
 
 /* Animation keyframes */
@@ -490,22 +516,34 @@ img, video, iframe {
   }
 }
 
-/* Responsive */
-@media (min-width: 768px) {
-  .option-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
-@media (max-width: 768px) {
-  .finance-options h2 {
-    font-size: 2rem;
+/* Responsive styles for screens ≤ 768px */
+@media screen and (max-width: 768px) {
+  .finance-options {
+    padding: 2rem 1rem;
+  }
+
+  .option-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .option {
+    padding: 1rem;
+    transform: translateY(0);   /* remove initial translate maybe */
   }
 
   .option h3 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  .option p {
+    font-size: 0.9rem;
+    line-height: 1.4;
   }
 }
+
 
 
 
@@ -535,6 +573,7 @@ img, video, iframe {
   margin-bottom: 3rem;
   opacity: 0;
   animation: fade-in-up 0.8s ease-out forwards;
+  color: orangered;
 }
 
 .steps {
@@ -550,10 +589,14 @@ img, video, iframe {
   border-radius: 8px;
   flex: 1;
   min-width: 200px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 4px 4px 5px 10px orangered;
   opacity: 0;
   transform: translateY(40px);
   animation: fade-in-up 0.8s ease-out forwards;
+}
+.step:hover{
+  box-shadow: none;
+  border: 3px solid orangered;
 }
 
 .step:nth-child(1) { animation-delay: 0.3s; }
@@ -565,7 +608,7 @@ img, video, iframe {
   width: 50px;
   height: 50px;
   margin: 0 auto 1rem;
-  background-color: #2563eb;
+  background-color:black;
   color: white;
   font-size: 1.5rem;
   border-radius: 50%;
@@ -675,17 +718,53 @@ img, video, iframe {
 }
 
 .plans-table th {
-  background-color: #e0e7ff;
+  background-color: black;
+  color: white;
   font-weight: bold;
 }
-
-.plans-table tbody tr:nth-child(even) {
-  background-color: #f2f4ff;
+.plans-table tbody{
+  background-color: orangered;
+  color: white;
 }
+.plans-table tbody tr:nth-child(even) {
+  background-color: orangered;
+    animation: row-pulse 3s ease-in-out infinite;
+  /* optional: hint for better performance */
+  will-change: background-color, box-shadow;
+  /* ensure it’s positioned so box-shadow is visible — relative helps layering */
+  position: relative;
+  z-index: 0;
+}
+/* Define the pulse (or glow-pulse) keyframes */
+@keyframes row-pulse {
+  0% {
+    transform: scale(1);
+    background-color: orangered;
+    box-shadow: 0 0 0 rgba(255, 69, 0, 0.7);
+  }
+  50% {
+    transform: scale(0.8);
+    background-color: #ff4500cc; /* slightly lighter / more transparent version */
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0);
+  }
+  100% {
+    transform: scale(1);
+    background-color: orangered;
+    box-shadow: 0 0 0 rgba(255, 69, 0, 0.7);
+  }
+}
+
+
+
+
+
+
+
+
 
 /* Eligibility / Documents Section */
 .eligibility-section {
-  background: white;
+  background: orangered;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -693,8 +772,18 @@ img, video, iframe {
   transform: translateY(30px);
   animation: fade-in-up 0.8s ease-out forwards;
   animation-delay: 0.5s;
+  margin-bottom: 60px;
 }
-
+.eligibility-title{
+  margin-left: 150px;
+  color: white;
+}
+.eligibility-container{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin-left: 150px;
+}
 .eligibility-section h3 {
   margin-top: 0;
   font-size: 1.8rem;
@@ -707,25 +796,75 @@ img, video, iframe {
   padding-left: 1rem;
 }
 
+.document-list li{
+  list-style: none;
+  margin-top: 25px;
+  font-size: 1.1rem;
+}
+
+span{
+  color: white;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  overflow: visible;
+}
+/* base static thin underline (optional) */
+span::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 1px;
+  width: 100%;
+  background: rgba(255,255,255,0.18);
+  pointer-events: none;
+}
+
+/* animated highlight that slides across */
+span::after {
+  content: "";
+  position: absolute;
+  left: -30%;             /* start off to the left */
+  bottom: -4px;
+  height: 3px;
+  width: 30%;
+  background-color: white;
+  transform: skewX(-12deg);
+  opacity: 0.95;
+  animation: underlineSlide 2s linear infinite;
+}
+
+@keyframes underlineSlide {
+  0%   { left: -30%; width: 30%; opacity: 0.0; }
+  20%  { left: 5%;   width: 40%; opacity: 0.95; }
+  80%  { left: 55%;  width: 40%; opacity: 0.95; }
+  100% { left: 130%; width: 30%; opacity: 0; }
+}
 .document-list li {
   margin-bottom: 0.75rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.5;
 }
 
 .eligibility-criteria h4 {
   margin-top: 2rem;
   font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: white;
 }
 
 .eligibility-criteria p {
   margin-bottom: 0.75rem;
-  font-size: 1rem;
+  font-size: 1.15rem;
 }
 
 .eligibility-criteria ul li {
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-bottom: 0.5rem;
+  /* text-decoration: none; */
+  list-style: none;
+  margin-top: 25px;
 }
 
 /* Animation Keyframes */
@@ -742,6 +881,14 @@ img, video, iframe {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .eligibility-title{
+    margin-left: 10px;
+  }
+  .eligibility-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
   .finance-plans-eligibility h2 {
     font-size: 2rem;
   }

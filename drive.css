@@ -159,6 +159,8 @@ img, video, iframe {
 .navBar {
   display: block;
   background-color:rgb(152, 9, 9) ;
+  /* background-color: orangered; */
+  height: 80px;
   border-top: 1px solid white;
   padding: 10px;
 }
@@ -212,7 +214,8 @@ img, video, iframe {
   transition: background 0.3s, color 0.3s;
 }
 .linkRight li a:hover {
-  color:#f0a500;
+  /* color:#555; */
+  color: #f0a500;
 }
 .linkRight li.sign button {
   background: red;
@@ -257,6 +260,7 @@ img, video, iframe {
   .navBar.active {
     display: block;
     background:rgb(152, 9, 9);
+    height: 60vh;
   }
   .navBar .navLinks {
     padding: 1rem;
@@ -310,107 +314,217 @@ img, video, iframe {
 
 
 
-/* ===== Test-Drive Hero Section ===== */
-.testdrive-hero {
-  position: relative;
-  width: 100%;
-  height: 70vh;
-  min-height: 400px;
-  background: url('https://via.placeholder.com/1600x900.png?text=Test+Drive+Background') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
+/* ---------- Test Drive Hero (section-scoped) ---------- */
+
+.td-hero {
+  padding: 3.5rem 1.5rem;
+  background: linear-gradient(180deg,#081224 0%, #06182a 100%);
+  color: orangered;
   overflow: hidden;
-  font-family: Arial, sans-serif;
-}
-
-.testdrive-hero__overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 1;
-}
-
-.testdrive-hero__content {
   position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 0 2rem;
-  max-width: 800px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* gentle decorative diagonal highlight */
+.td-hero::before{
+  content:"";
+  position:absolute;
+  right:-10%;
+  top: -10%;
+  width:60%;
+  height:120%;
+  background: linear-gradient(120deg, rgba(96,165,250,0.06), rgba(110,231,183,0.03));
+  transform: rotate(18deg);
+  pointer-events:none;
+}
+
+/* inner layout: two columns */
+.td-inner{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns: 1fr 540px;
+  gap: 2.25rem;
+  align-items: center;
+  position: relative;
+}
+
+/* COPY */
+.td-copy h1{
+  margin:0 0 0.6rem 0;
+  font-size: 2.25rem;
+  line-height: 1.03;
+  letter-spacing: -0.02em;
+  color: orangered;
   opacity: 0;
-  animation: fade-in-up 1s ease-out forwards;
+  transform: translateY(12px);
+  animation: fadeInUp 700ms cubic-bezier(.2,.9,.2,1) forwards;
+}
+.td-copy .td-sub{
+  margin: 0 0 1.25rem 0;
+  color: orangered;
+  font-size: 1.03rem;
+  max-width: 46ch;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 700ms cubic-bezier(.2,.9,.2,1) forwards;
+  animation-delay: 0.12s;
 }
 
-.testdrive-hero__title {
-  font-size: 2.75rem;
-  margin-bottom: 1rem;
-}
-
-.testdrive-hero__subtitle {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-  line-height: 1.5;
-}
-
-.testdrive-hero__buttons .btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  margin: 0 0.5rem;
-  border-radius: 4px;
-  font-size: 1rem;
+/* CTA buttons */
+.td-cta { display:flex; gap: 0.75rem; margin-bottom: 1.25rem; }
+.btn-primary,
+.btn-outline{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 0.78rem 1.05rem;
+  border-radius: 10px;
   text-decoration: none;
-  transition: background-color 0.3s, color 0.3s;
+  font-weight: 700;
+  font-size: 0.98rem;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.35);
+}
+.btn-primary{
+  background: linear-gradient(90deg,#6ee7b7,#60a5fa);
+  color: #04233b;
+}
+.btn-primary:focus,
+.btn-primary:hover{ transform: translateY(-4px); box-shadow: 0 18px 40px rgba(6,21,36,0.5); outline: none; }
+
+.btn-outline{
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.14);
+  color: orangered;
+}
+.btn-outline:focus,
+.btn-outline:hover{ transform: translateY(-3px); box-shadow: 0 10px 26px rgba(2,6,23,0.35); outline: none; }
+
+/* Feature list under CTA */
+.td-features{
+  display:flex;
+  gap:1rem;
+  list-style:none;
+  padding:0;
+  margin:0;
+  margin-top:0.5rem;
+}
+.td-features li{
+  font-size:0.95rem;
+  color: orangered;
+  padding: 0.35rem 0.5rem;
+  background: rgba(255,255,255,0.02);
+  border-radius: 8px;
 }
 
-.btn-primary {
-  background-color: #007bff;
-  color: white;
+/* MEDIA (car image) */
+.td-media { display:flex; justify-content:center; align-items:center; }
+
+/* simple card for car image with slide-in animation */
+.car-card{
+  width: 100%;
+  max-width: 520px;
+  border-radius: 18px;
+  overflow: visible;
+  position: relative;
+  transform: translateX(30px) scale(.98);
+  opacity: 0;
+  animation: carSlideIn 850ms cubic-bezier(.2,.9,.2,1) forwards;
+  animation-delay: 0.18s;
 }
 
-.btn-primary:hover {
-  background-color: #0056b3;
+/* image inside the card */
+.car-card img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius: 16px;
+  box-shadow: 0 30px 60px rgba(2,6,23,0.6);
+  transform: translateY(6px);
 }
 
-.btn-secondary {
-  background-color: transparent;
-  color: white;
-  border: 2px solid white;
+/* small floating badge */
+.car-card .badge{
+  position:absolute;
+  left: 16px;
+  top: 16px;
+  background: #ffcc00;
+  color: #081224;
+  font-weight: 800;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  box-shadow: 0 6px 20px rgba(2,6,23,0.4);
+  transform-origin: center;
+  animation: badgePop 1400ms ease-in-out infinite;
+  opacity: 0.98;
 }
 
-.btn-secondary:hover {
-  background-color: white;
-  color: #333;
+/* make badge subtle pulse */
+@keyframes badgePop {
+  0%   { transform: scale(0.96); box-shadow: 0 6px 20px rgba(2,6,23,0.25); }
+  50%  { transform: scale(1.03); box-shadow: 0 18px 40px rgba(2,6,23,0.35); }
+  100% { transform: scale(0.96); box-shadow: 0 6px 20px rgba(2,6,23,0.25); }
 }
 
-/* Fade-in animation */
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes carSlideIn {
+  from { opacity: 0; transform: translateX(36px) scale(.98); }
+  to   { opacity: 1; transform: translateX(0) scale(1); }
 }
 
-/* Responsive */
+/* Accessibility focus */
+.btn-primary:focus, .btn-outline:focus {
+  outline: 3px solid rgba(96,165,250,0.16);
+  outline-offset: 4px;
+}
+
+/* ---------- Responsive: <= 768px ---------- */
 @media (max-width: 768px) {
-  .testdrive-hero__title {
-    font-size: 2.25rem;
+  .td-inner{
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
-  .testdrive-hero__subtitle {
-    font-size: 1.1rem;
+
+  .td-copy h1{ font-size: 1.6rem; }
+  .td-copy .td-sub{ font-size: 0.98rem; max-width: 100%; }
+
+  .td-cta { flex-direction: column; align-items: stretch; gap: 0.6rem; }
+  .btn-primary, .btn-outline{ width: 100%; justify-content: center; }
+
+  .td-features{ flex-direction: column; gap: 0.5rem; margin-top: 0.6rem; }
+  .td-features li{ width: 100%; }
+
+  .car-card{
+    max-width: 100%;
+    transform: translateY(6px) scale(1);
+    animation: carSlideInMobile 700ms cubic-bezier(.2,.9,.2,1) forwards;
+    animation-delay: 0.06s;
   }
-  .testdrive-hero__buttons .btn {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
+  .car-card img{ border-radius: 12px; box-shadow: 0 18px 40px rgba(2,6,23,0.42); }
+
+  .car-card .badge { left: 12px; top: 12px; font-size: 0.72rem; padding: 0.3rem 0.5rem; }
+
+  /* Reduce motion preference respects */
+  @media (prefers-reduced-motion: reduce) {
+    .car-card, .td-copy h1, .td-copy .td-sub, .btn-primary, .btn-outline, .car-card .badge {
+      animation: none !important;
+      transition: none !important;
+    }
   }
 }
+
+/* small mobile-specific car animation */
+@keyframes carSlideInMobile {
+  from { opacity: 0; transform: translateY(20px) scale(.99); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
 
 
 

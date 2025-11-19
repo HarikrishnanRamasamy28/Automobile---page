@@ -58,16 +58,32 @@
 
 
 
-<section class="testdrive-hero">
-  <div class="testdrive-hero__overlay"></div>
-  <div class="testdrive-hero__content">
-    <h1 class="testdrive-hero__title">Book Your Test Drive</h1>
-    <p class="testdrive-hero__subtitle">
-      Experience convenience and a personalized journey — test drive what suits you best.
-    </p>
-    <div class="testdrive-hero__buttons">
-      <a href="/schedule" class="btn btn-primary">Schedule Now</a>
-      <a href="/availability" class="btn btn-secondary">Check Availability</a>
+<section class="td-hero" aria-labelledby="td-hero-title">
+  <div class="td-inner">
+    <div class="td-copy">
+      <h1 id="td-hero-title">Book Your Test Drive</h1>
+      <p class="td-sub">
+        Feel the power, comfort and tech of our latest models. Pick a car, choose a slot, and get behind the wheel.
+      </p>
+
+      <div class="td-cta" role="group" aria-label="Primary actions">
+        <a class="btn-primary" href="#booking">Book a Test Drive</a>
+        <a class="btn-outline" href="#models">View Models</a>
+      </div>
+
+      <ul class="td-features" aria-hidden="false">
+        <li><span>Free 30-minute drive</span></li>
+        <li><span>Flexible time slots</span></li>
+        <li><span>On-site advisor</span></li>
+      </ul>
+    </div>
+
+    <div class="td-media" aria-hidden="true">
+      <div class="car-card">
+        <!-- Replace with your actual image path or use an <svg> -->
+        <img src="car-placeholder.jpg" alt="Featured car model" />
+        <div class="badge">Popular</div>
+      </div>
     </div>
   </div>
 </section>
