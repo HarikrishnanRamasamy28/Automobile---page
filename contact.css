@@ -1,0 +1,623 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* color: rgb(152, 9, 9); */
+  /* color: #f0a500; */
+    overflow-x: hidden;
+  width: 100%;
+}
+/* Make sure images / media are not overflowing */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/*=== topbar ===*/
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;  
+  width: 100%;
+}
+
+
+/*... header ...*/
+/*=== topbar header's logo ===*/
+.header {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  padding: 12px 200px 15px 70px;
+  background-color: #f0a500;
+}
+.header .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.header .logo img {
+  height: 40px;
+  width: auto;
+}
+.header .logo h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color:rgb(152, 9, 9);
+}
+/*== topbar contact's contact ==*/
+.header .contact {
+  display: flex;
+  align-items: center;
+  gap:25px; /* space between items */
+  list-style: none; /* if you are using li directly, remove bullets */
+  margin: 0;
+  padding: 0;
+}
+.header .contact li a {
+  text-decoration: none;
+  padding: 6px 12px;
+}
+.header .contact .signin{
+    display: flex;
+    flex-direction: row;
+    gap:5px;
+    width: 150px;
+}
+.header .contact .signin img{
+    margin-top: 15px;
+    width: 30px;
+    height: 30px;
+}
+.header .contact .signin a{
+    color: rgb(152, 9, 9);
+    font-weight: bold;
+}
+.header .contact li a:hover {
+    color: black;
+}
+/* "Contact Us" button */
+.header .contact li.sign button {
+  background:rgb(152, 9, 9);
+  color:#f0a500;
+  border: none;
+  padding: 8px 16px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.header .contact li.sign button:hover {
+  transform: scale(1.2);
+}
+
+
+/* Hamburger button styling */
+.hamburger {
+  display: none;
+  font-size:2.5rem;
+  color:rgb(152, 9, 9);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.3s;
+}
+
+/* ... header's media query ... */
+@media (max-width:768px) {
+    html, body {
+        overflow-x: hidden;
+    }
+    .header .logo{
+        display: flex;
+        flex-direction: column;
+        margin-left:-2px;
+    }
+    .header .logo h2{
+        font-size: 1.5rem;
+    }
+    .header .contact {
+        flex-direction: column;
+        gap: 20px;
+        margin-left: 60px;
+    }
+    .header .contact .signin img{
+        margin-top: 10px;
+    }
+    .header .contact li a,
+    .header .contact li.sign button {
+        font-size: 0.8rem;
+    }
+    .header .contact li.sign button {
+        padding: 6px 12px;
+        margin-left: -42px;
+    }
+    /* Optional: adjust any padding / margin that might push things out */
+    .header {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .navBar .navLinks {
+        padding-left: 0;  /* instead of 220px */
+    }
+    .hamburger{
+        display: block;
+        margin-left:5px;
+    }
+}
+
+
+
+/*=== navbar ===*/
+.navBar {
+  display: block;
+  background-color:rgb(152, 9, 9) ;
+  border-top: 1px solid white;
+  padding: 10px;
+}
+.navBar .navLinks {
+  margin: 0 auto;
+  padding-left: 220px;
+}
+.navBar .linkRight {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 1.5rem;
+  gap: 1.5rem;
+}
+
+/*=== topbar navbar's Dropdown menu ===*/
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  min-width: 180px;
+  padding: 0.5rem 0;
+  list-style: none;
+}
+.dropdown:hover .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-5);
+}
+.dropdown-menu li a {
+  display: block;
+  color:black;
+  margin-top:-22px;
+  font-size:1rem;
+}
+
+.linkRight li {
+  position: relative;
+}
+.linkRight li a {
+  text-decoration: none;
+  font-size: 1.03rem;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 0.75rem;
+  transition: background 0.3s, color 0.3s;
+}
+.linkRight li a:hover {
+  color:#f0a500;
+}
+.linkRight li.sign button {
+  background: red;
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  font-weight: bold;
+  box-sizing: border-box;
+    /* Pulse animation */
+  animation: pulse-btn 2s ease-in-out infinite;
+}
+/* @keyframes for pulse */
+@keyframes pulse-btn {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* Mobile / small-screen styles */
+@media (max-width:768px) {
+  .header{
+    height: 150px;
+  }
+  .navBar {
+    display: none;
+    width: 100%;
+  }
+  .navBar.active {
+    display: block;
+    background:rgb(152, 9, 9);
+  }
+  .navBar .navLinks {
+    padding: 1rem;
+  }
+  .navBar .linkRight {
+    flex-direction: column;
+    gap: 0;
+  }
+  .linkRight li {
+    width: 100%;
+    margin: 0;
+    padding: 0.5rem 0;
+  }
+  .linkRight li a {
+    display: block;
+    width: 100%;
+    color: #f0a500;
+    padding: 0.75rem 1rem;
+    background: transparent;
+  }
+  
+  /* Allow scrolling if list is long */
+  .navBar.active .linkRight {
+    overflow-y: auto;
+    max-height: 80vh;
+    padding-bottom: 100px; /* space for button visibility */
+  }
+
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    background: transparent;
+  }
+  .dropdown-menu li a {
+    color:white;
+    padding-left: 2rem;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== Contact Us Section ===== */
+.contact-us {
+  background-color: #f9f9f9;
+  padding: 4rem 2rem;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.contact-us__container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-us h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.contact-us__intro {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.contact-us__content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Contact Form Styles */
+.contact-form-wrapper {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.btn-submit {
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #0056b3;
+}
+
+/* Contact Info Styles */
+.contact-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.info-item {
+  margin-bottom: 1.5rem;
+}
+
+.info-item h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.info-item p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.info-item a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.info-item a:hover {
+  text-decoration: underline;
+}
+
+/* Map Styles */
+.map-wrapper {
+  margin-top: 3rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-us__content {
+    flex-direction: column;
+  }
+
+  .map-wrapper {
+    margin-top: 2rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* Base reset for footer */
+.auto-footer {
+  position: relative;
+  background:rgb(152, 9, 9);
+  color: #eee;
+  padding-top: 120px; /* for waves */
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+
+/* Footer content */
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+  max-width: 1500px;
+  margin: auto;
+}
+
+
+.footer-col {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+.footer-col h4 {
+  margin-bottom: 10px;
+  color: #f0a500;
+  text-shadow: 2px 2px 2px;
+  font-size: 1.5rem;
+
+  /* Pulse animation */
+  animation: pulse 2s infinite ease-in-out;
+  transform-origin: center center;
+}
+/* Define the pulse keyframes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.footer-content .services{
+    padding-left: 100px;
+}
+
+
+.footer-col p,
+.footer-col ul {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+.footer-col ul li a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-col ul li a:hover {
+  color: #f0a500;
+  text-decoration: underline;
+}
+
+
+.social-links {
+    margin-top: 30px;
+}
+.social-links a {
+  display: inline-block;
+  transition: transform 0.3s, color 0.3s;
+  margin: 0 10px;
+  color: #ddd;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+/* Social-links hover animation */
+.social-links a {
+  display: inline-block;
+  transition: transform 0.3s, color 0.3s;
+  /* Animation */
+  animation: pulse 2s infinite ease-in-out;
+  display: inline-block; /* ensures transform works correctly */
+  will-change: transform, opacity; /* helps performance */
+}
+/* Pulse keyframes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes content-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Footer bottom */
+.footer-bottom {
+  padding: 15px 100px;
+  margin-left: 550px;
+  margin-bottom: 20px;
+}
+.footer-bottom p {
+  margin: 0;
+  font-size: 13px;
+}
+
+
+
+
+/* Responsive for small screens (<= 450px) */
+@media (max-width:768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  .footer-col {
+    margin: 5px 0;
+    text-align: center;
+  }
+  .footer-content .services{
+    padding-left: 2px;
+    /* margin-bottom: 30px; */
+    /* padding-top: -40px; */
+    padding-bottom: 40px;
+  }
+  .footer-col p, .footer-col ul li a {
+    font-size: 12px;
+  }
+  .footer-bottom {
+    margin-left: 2px;
+  }
+  .social-links{
+    margin-left:-1px;
+  }
+  .social-links img{
+    /* width: 25px; */
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+}

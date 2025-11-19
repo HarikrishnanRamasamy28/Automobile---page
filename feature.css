@@ -158,7 +158,8 @@ img, video, iframe {
 /*=== navbar ===*/
 .navBar {
   display: block;
-  background-color:rgb(152, 9, 9) ;
+  background-color: rgb(152, 9, 9);
+  height: 80px;
   border-top: 1px solid white;
   padding: 10px;
 }
@@ -166,7 +167,7 @@ img, video, iframe {
   margin: 0 auto;
   padding-left: 220px;
 }
-.navBar .linkRight {
+.navBar .linkRight {height: 80px;
   display: flex;
   align-items: center;
   list-style: none;
@@ -257,6 +258,7 @@ img, video, iframe {
   .navBar.active {
     display: block;
     background:rgb(152, 9, 9);
+    height: 60vh;
   }
   .navBar .navLinks {
     padding: 1rem;
@@ -315,7 +317,7 @@ img, video, iframe {
   width: 100%;
   height: 80vh;
   min-height: 500px;
-  background-color: orange;
+  /* background-color: orange; */
   /* background: url('https://via.placeholder.com/1600x900.png?text=Car+Background') center/cover no-repeat; */
   display: flex;
   align-items: center;
@@ -355,11 +357,13 @@ img, video, iframe {
 .text-content h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
+  color: orangered;
 }
 
 .text-content p {
   font-size: 1.25rem;
   margin-bottom: 2rem;
+  color: orangered;
 }
 
 .hero-buttons a {
@@ -382,7 +386,7 @@ img, video, iframe {
 
 .btn-secondary {
   background-color: transparent;
-  color: white;
+  color:black;
   border: 2px solid white;
 }
 
