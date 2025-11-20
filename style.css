@@ -1384,8 +1384,8 @@ img, video, iframe {
 /* Base reset for footer */
 .auto-footer {
   position: relative;
-  /* background:rgb(152, 9, 9); */
-  background: orangered;
+  background:rgb(152, 9, 9);
+  /* background: orangered; */
   color: #eee;
   padding-top: 120px; /* for waves */
   font-family: sans-serif;
@@ -1410,8 +1410,8 @@ img, video, iframe {
 }
 .footer-col h4 {
   margin-bottom: 10px;
-  /* color: #f0a500; */
-  color: #555;
+  color: #f0a500;
+  /* color: #555; */
   text-shadow: 2px 2px 2px;
   font-size: 1.5rem;
 
