@@ -318,25 +318,15 @@ img, video, iframe {
 
 .td-hero {
   padding: 3.5rem 1.5rem;
-  background: linear-gradient(180deg,#081224 0%, #06182a 100%);
+  /* background: linear-gradient(180deg,#081224 0%, #06182a 100%); */
   color: orangered;
   overflow: hidden;
+  height: 80vh;
   position: relative;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background-color: rgb(247, 247, 247);
+  /* font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; */
 }
 
-/* gentle decorative diagonal highlight */
-.td-hero::before{
-  content:"";
-  position:absolute;
-  right:-10%;
-  top: -10%;
-  width:60%;
-  height:120%;
-  background: linear-gradient(120deg, rgba(96,165,250,0.06), rgba(110,231,183,0.03));
-  transform: rotate(18deg);
-  pointer-events:none;
-}
 
 /* inner layout: two columns */
 .td-inner{
@@ -351,24 +341,26 @@ img, video, iframe {
 
 /* COPY */
 .td-copy h1{
-  margin:0 0 0.6rem 0;
-  font-size: 2.25rem;
+  /* margin:0 0 0.6rem 0; */
+  font-size: 2.5rem;
   line-height: 1.03;
-  letter-spacing: -0.02em;
+  /* letter-spacing: -0.02em; */
+  margin-bottom: 30px;
   color: orangered;
   opacity: 0;
   transform: translateY(12px);
   animation: fadeInUp 700ms cubic-bezier(.2,.9,.2,1) forwards;
 }
 .td-copy .td-sub{
-  margin: 0 0 1.25rem 0;
-  color: orangered;
+  /* margin: 0 0 1.25rem 0; */
+  color:#555;
   font-size: 1.03rem;
   max-width: 46ch;
   opacity: 0;
   transform: translateY(10px);
   animation: fadeInUp 700ms cubic-bezier(.2,.9,.2,1) forwards;
   animation-delay: 0.12s;
+  margin-bottom: 30px;
 }
 
 /* CTA buttons */
@@ -381,14 +373,15 @@ img, video, iframe {
   padding: 0.78rem 1.05rem;
   border-radius: 10px;
   text-decoration: none;
-  font-weight: 700;
+  font-weight:bold;
   font-size: 0.98rem;
+  margin-bottom: 35px;
   transition: transform 180ms ease, box-shadow 180ms ease;
   box-shadow: 0 6px 18px rgba(2,6,23,0.35);
 }
 .btn-primary{
-  background: linear-gradient(90deg,#6ee7b7,#60a5fa);
-  color: #04233b;
+  background: orangered;
+  color: white;
 }
 .btn-primary:focus,
 .btn-primary:hover{ transform: translateY(-4px); box-shadow: 0 18px 40px rgba(6,21,36,0.5); outline: none; }
@@ -412,10 +405,33 @@ img, video, iframe {
 }
 .td-features li{
   font-size:0.95rem;
-  color: orangered;
+  color: #555;
+  font-weight: bold;
   padding: 0.35rem 0.5rem;
-  background: rgba(255,255,255,0.02);
+  background: orangered;
+  color: white;
   border-radius: 8px;
+
+  /* Animation properties */
+  animation: pulse 2s infinite ease-in-out;
+  /* Optional: helps browser optimize animation */
+  will-change: transform, opacity;
+}
+
+/* Define the pulse keyframes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* MEDIA (car image) */
@@ -439,8 +455,8 @@ img, video, iframe {
   display:block;
   width:100%;
   height:auto;
-  border-radius: 16px;
-  box-shadow: 0 30px 60px rgba(2,6,23,0.6);
+  /* border-radius: 16px; */
+  /* box-shadow: 0 30px 60px rgba(2,6,23,0.6); */
   transform: translateY(6px);
 }
 
@@ -449,13 +465,13 @@ img, video, iframe {
   position:absolute;
   left: 16px;
   top: 16px;
-  background: #ffcc00;
-  color: #081224;
+  background: black;
+  color: white;
   font-weight: 800;
   padding: 0.35rem 0.6rem;
   border-radius: 999px;
   font-size: 0.78rem;
-  box-shadow: 0 6px 20px rgba(2,6,23,0.4);
+  /* box-shadow: 0 6px 20px rgba(2,6,23,0.4); */
   transform-origin: center;
   animation: badgePop 1400ms ease-in-out infinite;
   opacity: 0.98;
@@ -484,40 +500,49 @@ img, video, iframe {
   outline-offset: 4px;
 }
 
-/* ---------- Responsive: <= 768px ---------- */
 @media (max-width: 768px) {
-  .td-inner{
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+  .td-hero {
+    padding: 2rem 1rem;
+    height: auto; /* maybe make height auto on smaller devices */
   }
 
-  .td-copy h1{ font-size: 1.6rem; }
-  .td-copy .td-sub{ font-size: 0.98rem; max-width: 100%; }
-
-  .td-cta { flex-direction: column; align-items: stretch; gap: 0.6rem; }
-  .btn-primary, .btn-outline{ width: 100%; justify-content: center; }
-
-  .td-features{ flex-direction: column; gap: 0.5rem; margin-top: 0.6rem; }
-  .td-features li{ width: 100%; }
-
-  .car-card{
-    max-width: 100%;
-    transform: translateY(6px) scale(1);
-    animation: carSlideInMobile 700ms cubic-bezier(.2,.9,.2,1) forwards;
-    animation-delay: 0.06s;
+  /* Adjust inner layout to stack instead of two columns */
+  .td-inner {
+    display: block;
   }
-  .car-card img{ border-radius: 12px; box-shadow: 0 18px 40px rgba(2,6,23,0.42); }
 
-  .car-card .badge { left: 12px; top: 12px; font-size: 0.72rem; padding: 0.3rem 0.5rem; }
+  /* Make feature list wrap or stack */
+  .td-features {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
 
-  /* Reduce motion preference respects */
-  @media (prefers-reduced-motion: reduce) {
-    .car-card, .td-copy h1, .td-copy .td-sub, .btn-primary, .btn-outline, .car-card .badge {
-      animation: none !important;
-      transition: none !important;
-    }
+  .td-features li {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+    animation-duration: 3s; /* slower pulse on small screen */
+  }
+
+  /* Adjust CTA buttons on smaller screens */
+  .td-cta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Maybe make the car image smaller or center it differently */
+  .car-card {
+    transform: translateX(0) scale(0.9);
+    margin-top: 1rem;
   }
 }
+
 
 /* small mobile-specific car animation */
 @keyframes carSlideInMobile {
@@ -541,7 +566,7 @@ img, video, iframe {
 .testdrive-models {
   padding: 4rem 2rem;
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  background-color: rgb(247, 247, 247);
   color: #333;
 }
 
@@ -554,6 +579,7 @@ img, video, iframe {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2rem;
+  color: orangered;
 }
 
 /* Filter Buttons */
@@ -576,8 +602,9 @@ img, video, iframe {
 
 .filter-btn.active,
 .filter-btn:hover {
-  background: #333;
+  background:orangered;
   color: white;
+  border: none;
 }
 
 /* Models Grid */
@@ -591,13 +618,22 @@ img, video, iframe {
   background: white;
   padding: 1rem;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px orangered;
   text-align: center;
   transition: transform 0.3s;
 }
 
+.testdrive-models .container .models-grid .model-item:nth-child(3) h3{
+  margin-top: 58px;
+}
+.testdrive-models .container .models-grid .model-item:nth-child(4) h3{
+  margin-top: 70px;
+}
+
 .model-item:hover {
   transform: translateY(-5px);
+  box-shadow: none;
+  background-color: orangered;
 }
 
 .model-item img {
@@ -614,7 +650,7 @@ img, video, iframe {
 
 .btn-book {
   padding: 0.5rem 1rem;
-  background: #007bff;
+  background: orangered;
   color: white;
   border: none;
   border-radius: 4px;
@@ -657,13 +693,13 @@ img, video, iframe {
 /* ===== How Test Drive Works Section ===== */
 .how-testdrive-works {
   padding: 4rem 2rem;
-  background-color: #f9f9f9;
+  background-color: orangered;
   font-family: Arial, sans-serif;
   color: #333;
 }
 
 .how-testdrive-works .container {
-  max-width: 900px;
+  /* max-width: 900px; */
   margin: 0 auto;
   text-align: center;
 }
@@ -671,6 +707,7 @@ img, video, iframe {
 .how-testdrive-works h2 {
   font-size: 2.5rem;
   margin-bottom: 3rem;
+  color: white;
 }
 
 /* Steps layout */
@@ -678,15 +715,15 @@ img, video, iframe {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .step {
   flex: 1 1 200px;
-  background: white;
+  /* background: white; */
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  /* box-shadow: 0 4px 12px rgba(0,0,0,0.1); */
   position: relative;
   transition: transform 0.3s;
 }
@@ -704,7 +741,7 @@ img, video, iframe {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: #007bff;
+  background: black;
   color: white;
   width: 30px;
   height: 30px;
@@ -713,17 +750,32 @@ img, video, iframe {
   align-items: center;
   justify-content: center;
   font-weight: bold;
+
+  /* Add jump animation */
+  animation: jump 1.6s ease-in-out infinite;
+  will-change: transform;
+}
+/* Jump animation */
+@keyframes jump {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-8px); }
+  50%  { transform: translateY(0); }
+  70%  { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
 }
 
+
 .step-content h3 {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 1.5px ;
+  color: white;
 }
 
 .step-content p {
   font-size: 1rem;
   line-height: 1.5;
-  color: #666;
+  color: white;
 }
 
 /* Responsive for small screens */
@@ -753,7 +805,7 @@ img, video, iframe {
 /* ===== Booking Form Styles ===== */
 .booking-form-section {
   padding: 4rem 2rem;
-  background-color: #f8f8f8;
+  background-color: rgb(247, 247, 247);
   font-family: Arial, sans-serif;
   color: #333;
 }
@@ -767,6 +819,7 @@ img, video, iframe {
   text-align: center;
   font-size: 2.25rem;
   margin-bottom: 2rem;
+  color: orangered;
 }
 
 .booking-form .form-row {
@@ -785,13 +838,14 @@ img, video, iframe {
 .booking-form .form-group label {
   margin-bottom: 0.5rem;
   font-weight: bold;
+  color: orangered;
 }
 
 .booking-form .form-group input,
 .booking-form .form-group select,
 .booking-form .form-group textarea {
   padding: 0.75rem;
-  border: 1px solid #ccc;
+  border: 1px solid #555;
   border-radius: 4px;
   font-size: 1rem;
   width: 100%;
@@ -806,7 +860,7 @@ img, video, iframe {
   display: block;
   width: 100%;
   padding: 0.75rem;
-  background-color: #007bff;
+  background-color: black;
   color: white;
   font-size: 1rem;
   border: none;
@@ -816,7 +870,7 @@ img, video, iframe {
 }
 
 .btn-submit:hover {
-  background-color: #0056b3;
+  background-color: orangered;
 }
 
 /* Responsive */

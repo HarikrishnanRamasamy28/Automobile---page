@@ -159,6 +159,8 @@ img, video, iframe {
 .navBar {
   display: block;
   background-color:rgb(152, 9, 9) ;
+  /* background-color: orangered; */
+  height: 80px;
   border-top: 1px solid white;
   padding: 10px;
 }
@@ -212,7 +214,8 @@ img, video, iframe {
   transition: background 0.3s, color 0.3s;
 }
 .linkRight li a:hover {
-  color:#f0a500;
+  /* color:#555; */
+  color: #f0a500;
 }
 .linkRight li.sign button {
   background: red;
@@ -257,6 +260,7 @@ img, video, iframe {
   .navBar.active {
     display: block;
     background:rgb(152, 9, 9);
+    height: 60vh;
   }
   .navBar .navLinks {
     padding: 1rem;
@@ -314,7 +318,8 @@ img, video, iframe {
   width: 100%;
   height: 70vh;
   min-height: 400px;
-  background: url('https://via.placeholder.com/1600x900.png?text=Car+Dealership+Background') center/cover no-repeat;
+  background-color:  rgb(247, 247, 247);
+  /* background: url('https://via.placeholder.com/1600x900.png?text=Car+Dealership+Background') center/cover no-repeat; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -323,7 +328,7 @@ img, video, iframe {
   font-family: Arial, sans-serif;
 }
 
-.buy-hero__overlay {
+/* .buy-hero__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -331,7 +336,7 @@ img, video, iframe {
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 1;
-}
+} */
 
 .buy-hero__content {
   position: relative;
@@ -346,12 +351,14 @@ img, video, iframe {
 .buy-hero__title {
   font-size: 3rem;
   margin-bottom: 1rem;
+  color: orangered;
 }
 
 .buy-hero__subtitle {
   font-size: 1.25rem;
   margin-bottom: 2rem;
   line-height: 1.5;
+  color:#555;
 }
 
 .buy-hero__buttons .btn {
@@ -365,23 +372,23 @@ img, video, iframe {
 }
 
 .btn-primary {
-  background-color: #28a745;
+  background-color: orangered;
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: #218838;
+  background-color:black;
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: white;
-  border: 2px solid white;
+  color:black;
+  border: 2px solid black;
 }
 
 .btn-secondary:hover {
-  background-color: white;
-  color: #333;
+  background-color:black;
+  color: white;
 }
 
 @keyframes fade-in-up {
@@ -424,7 +431,7 @@ img, video, iframe {
 /* ===== Why Buy From Us Section ===== */
 .why-buy-us {
   padding: 4rem 2rem;
-  background-color: #f3f4f6;
+  background-color: orangered;
   font-family: Arial, sans-serif;
   color: #333;
 }
@@ -438,6 +445,7 @@ img, video, iframe {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2.5rem;
+  color: white;
 }
 
 /* Feature Grid */
@@ -449,10 +457,10 @@ img, video, iframe {
 }
 
 .feature {
-  background: #fff;
+  /* background: #fff; */
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  /* box-shadow: 0 4px 12px rgba(0,0,0,0.1); */
   text-align: center;
 }
 
@@ -463,13 +471,19 @@ img, video, iframe {
 }
 
 .feature h3 {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   margin-bottom: 0.75rem;
+  color: white;
+  text-decoration: underline;
+
+  /* Add pulse animation */
+  animation: pulseGlow 1.8s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 
 .feature p {
   font-size: 1rem;
-  color: #555;
+  color: white;
   line-height: 1.5;
 }
 
@@ -482,10 +496,10 @@ img, video, iframe {
 }
 
 .signal {
-  background: #fff;
+  /* background: #fff; */
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  /* box-shadow: 0 4px 12px rgba(0,0,0,0.08); */
   flex: 1 1 200px;
   text-align: center;
 }
@@ -497,13 +511,34 @@ img, video, iframe {
 }
 
 .signal h4 {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
+  color: white;
+  text-decoration: underline;
+
+  /* Add pulse animation */
+  animation: pulseGlow 1.8s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .signal p {
   font-size: 0.95rem;
-  color: #555;
+  color: white;
   line-height: 1.4;
 }
 
@@ -547,7 +582,7 @@ img, video, iframe {
 }
 
 .buy-process .container {
-  max-width: 900px;
+  /* max-width: 900px; */
   margin: 0 auto;
   text-align: center;
 }
@@ -555,6 +590,7 @@ img, video, iframe {
 .buy-process h2 {
   font-size: 2.5rem;
   margin-bottom: 3rem;
+  color: orangered;
 }
 
 .process-steps {
@@ -563,6 +599,21 @@ img, video, iframe {
   justify-content: space-between;
   gap: 2rem;
 }
+.buy-process .container .process-steps .step:nth-child(1),
+.buy-process .container .process-steps .step:nth-child(3){
+  background-color: rgb(32, 31, 31);
+}
+/* .buy-process .container .process-steps .step:nth-child(1) h3,
+.buy-process .container .process-steps .step:nth-child(1) p{
+  color: white;
+} */
+
+
+.buy-process .container .process-steps .step:nth-child(2),
+.buy-process .container .process-steps .step:nth-child(4){
+  background-color: orangered;
+}
+
 
 .step {
   background: white;
@@ -585,12 +636,13 @@ img, video, iframe {
 .content h3 {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
+  color: white;
 }
 
 .content p {
   font-size: 1rem;
   line-height: 1.5;
-  color: #555;
+  color: white;
 }
 
 /* Responsive */

@@ -159,6 +159,8 @@ img, video, iframe {
 .navBar {
   display: block;
   background-color:rgb(152, 9, 9) ;
+  /* background-color: orangered; */
+  height: 80px;
   border-top: 1px solid white;
   padding: 10px;
 }
@@ -212,7 +214,8 @@ img, video, iframe {
   transition: background 0.3s, color 0.3s;
 }
 .linkRight li a:hover {
-  color:#f0a500;
+  /* color:#555; */
+  color: #f0a500;
 }
 .linkRight li.sign button {
   background: red;
@@ -257,6 +260,7 @@ img, video, iframe {
   .navBar.active {
     display: block;
     background:rgb(152, 9, 9);
+    height: 60vh;
   }
   .navBar .navLinks {
     padding: 1rem;
@@ -299,7 +303,6 @@ img, video, iframe {
   }
 
 }
-
 
 
 
