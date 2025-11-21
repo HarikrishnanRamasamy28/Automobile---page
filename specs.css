@@ -458,7 +458,7 @@ img, video, iframe {
   max-width: 800px;
   margin: 60px auto;
   padding: 20px 30px;
-  background: #ffffff;
+  background:orangered;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
@@ -480,16 +480,44 @@ img, video, iframe {
 }
 
 .basic-info-section h2 {
+  /* position: relative; */
   font-size: 1.8rem;
   margin-bottom: 20px;
-  color: #333;
+  color: white;
+  margin-left: 250px;
+  text-decoration:underline;
+}
+
+/* Underline pseudo-element */
+.basic-info-section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* adjust as needed */
+  height: 2px;  /* thickness of underline */
+  width: 50%;
+  background: black;
+  transform-origin: left center;
+  animation: underlineGrow 1.5s ease-in-out forwards infinite;
+}
+
+/* Keyframes for the underline animation */
+@keyframes underlineGrow {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 .basic-info-section h3 {
   font-size: 1.4rem;
   margin-top: 30px;
   margin-bottom: 15px;
-  color: #555;
+  color: black;
+  text-decoration: underline;
+  margin-left: 300px;
 }
 
 .info-grid,
@@ -509,39 +537,68 @@ img, video, iframe {
 
 .label {
   font-weight: bold;
-  color: #666;
+  color:white;
 }
 
 .value {
   margin-top: 4px;
-  color: #333;
+  color: white;
 }
 
 @media only screen and (max-width: 768px) {
   .basic-info-section {
+    max-width: 95%;
+    margin: 40px auto;
     padding: 15px 20px;
   }
 
   .basic-info-section h2 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    margin-left: 0;
+    text-align: center;
+    /* optional: remove text-decoration if too wide */
+    text-decoration: none;
+  }
+
+  /* Adjust the animated underline for smaller screens */
+  .basic-info-section h2::after {
+    left: 50%;
+    bottom: -4px;
+    width: 40%; /* shorter underline on smaller screens */
+    background: black;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    animation: underlineGrowSmall 1.5s ease-in-out forwards;
+  }
+
+  @keyframes underlineGrowSmall {
+    from {
+      transform: translateX(-50%) scaleX(0);
+    }
+    to {
+      transform: translateX(-50%) scaleX(1);
+    }
   }
 
   .basic-info-section h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    margin-left: 0;
+    text-align: center;
+    margin-left: -5px;
   }
 
   .info-grid,
   .dimensions-grid,
   .weight-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* stack items vertically */
+    gap: 10px;
+    margin-left: 130px;
   }
 
-  .label {
-    font-size: 0.95rem;
-  }
-
+  .label,
   .value {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-left: 0;
   }
 }
 
@@ -558,7 +615,7 @@ img, video, iframe {
   max-width: 800px;
   margin: 60px auto;
   padding: 30px 20px;
-  background: #fff;
+  background: #555;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 
@@ -582,8 +639,9 @@ img, video, iframe {
 .powertrain-section h2 {
   font-size: 1.8rem;
   margin-bottom: 25px;
-  color: #333;
+  color:black;
   text-align: center;
+  text-decoration: underline;
 }
 
 .spec-grid {
@@ -597,16 +655,13 @@ img, video, iframe {
   flex-direction: column;
 }
 
-.spec-item .label {
-  font-weight: bold;
-  color: #666;
+.basic-info-section .spec-item .label {
+  color: white;
 }
 
-.spec-item .value {
-  margin-top: 4px;
-  color: #333;
+.basic-info-section .spec-item .value {
+  color: white;
 }
-
 @media only screen and (max-width: 768px) {
   .powertrain-section {
     padding: 20px 15px;
@@ -616,6 +671,7 @@ img, video, iframe {
   }
   .spec-grid {
     grid-template-columns: 1fr;
+    margin-left: 130px;
   }
   .spec-item .label {
     font-size: 0.95rem;
@@ -639,7 +695,7 @@ img, video, iframe {
   max-width: 800px;
   margin: 60px auto;
   padding: 30px 20px;
-  background: #ffffff;
+  background: orangered;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 
@@ -663,8 +719,9 @@ img, video, iframe {
 .perf-metrics-section h2 {
   font-size: 1.8rem;
   margin-bottom: 25px;
-  color: #333;
+  color:black;
   text-align: center;
+  text-decoration: underline;
 }
 
 .perf-grid {
@@ -680,12 +737,12 @@ img, video, iframe {
 
 .perf-item .label {
   font-weight: bold;
-  color: #666;
+  color: white;
 }
 
 .perf-item .value {
   margin-top: 4px;
-  color: #333;
+  color: white;
 }
 
 @media only screen and (max-width: 768px) {
@@ -699,6 +756,7 @@ img, video, iframe {
 
   .perf-grid {
     grid-template-columns: 1fr;
+    margin-left: 130px;
   }
 
   .perf-item .label {
@@ -725,7 +783,7 @@ img, video, iframe {
   max-width: 800px;
   margin: 60px auto;
   padding: 30px 20px;
-  background: #ffffff;
+  background:#555;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
@@ -749,8 +807,9 @@ img, video, iframe {
 .chassis-section h2 {
   font-size: 1.8rem;
   margin-bottom: 25px;
-  color: #333;
+  color:black;
   text-align: center;
+  text-decoration: underline;
 }
 
 .chassis-grid {
@@ -766,12 +825,12 @@ img, video, iframe {
 
 .spec-item .label {
   font-weight: bold;
-  color: #666;
+  color:white;
 }
 
 .spec-item .value {
   margin-top: 4px;
-  color: #333;
+  color:white;
 }
 
 @media only screen and (max-width: 768px) {
@@ -783,6 +842,7 @@ img, video, iframe {
   }
   .chassis-grid {
     grid-template-columns: 1fr;
+    margin-left: 130px;
   }
   .spec-item .label {
     font-size: 0.95rem;
@@ -807,7 +867,7 @@ img, video, iframe {
   max-width: 800px;
   margin: 60px auto;
   padding: 30px 20px;
-  background: #ffffff;
+  background: orangered;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 
@@ -831,7 +891,8 @@ img, video, iframe {
 .warranty-section h2 {
   font-size: 1.8rem;
   margin-bottom: 25px;
-  color: #333;
+  color:black;
+  text-decoration: underline;
   text-align: center;
 }
 
@@ -848,12 +909,13 @@ img, video, iframe {
 
 .warranty-item .label {
   font-weight: bold;
-  color: #666;
+  color:black;
+  text-decoration: underline;
 }
 
 .warranty-item .value {
   margin-top: 4px;
-  color: #333;
+  color:white;
   line-height: 1.4;
 }
 

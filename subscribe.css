@@ -11,6 +11,7 @@ html, body {
   /* color: #f0a500; */
     overflow-x: hidden;
   width: 100%;
+  background-color:  rgb(250, 250, 250);
 }
 /* Make sure images / media are not overflowing */
 img, video, iframe {
@@ -384,6 +385,7 @@ img, video, iframe {
   border: none;
   border-radius: 4px;
   text-decoration: none;
+  font-weight: bold;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
 
@@ -394,7 +396,7 @@ img, video, iframe {
 }
 
 .hero-value .cta-btn:hover {
-  background: #e68900;
+  background:black;
   transform: translateY(-3px);
 }
 
@@ -438,16 +440,17 @@ img, video, iframe {
 
 
 .pricing-section {
-  max-width: 1000px;
+  max-width: 1300px;
   margin: 60px auto;
   padding: 0 20px;
   text-align: center;
+  background-color:rgb(250, 250, 250) ;
 }
 
 .pricing-section h2 {
   font-size: 2.2rem;
   margin-bottom: 30px;
-  color: #333;
+  color: orangered;
 }
 
 /* Toggle Switch */
@@ -476,14 +479,40 @@ img, video, iframe {
   gap: 20px;
 }
 
+
+.pricing-section .pricing-cards .plan-card:nth-child(2){
+  /* combine existing entrance animation with pulse */
+  /* background-color: orangered; */
+  animation: fadeInPlan 0.8s ease-out forwards, pulse 2s infinite ease-in-out;
+  transform-origin: center center;
+}
+/* .pricing-section .pricing-cards .plan-card .popular:nth-child(2) .badge{
+  color: white;
+} */
+/* Gentle pulse keyframes */
+@keyframes pulse {
+  0% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.10);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+}
+
 /* Individual Plan Card */
 .plan-card {
-  background: #ffffff;
+  background:  rgb(250, 250, 250);
   border: 2px solid #ddd;
   border-radius: 8px;
   padding: 30px 20px;
   position: relative;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 4px 4px 3px 5px orangered;
   transition: transform 0.3s, border-color 0.3s;
   opacity: 0;
   transform: translateY(20px);
@@ -507,14 +536,14 @@ img, video, iframe {
 
 .plan-card:hover {
   transform: translateY(-5px);
-  border-color: #0070f3;
+  /* border-color: #0070f3; */
 }
 
 .plan-card .badge {
   position: absolute;
   top: -10px;
   right: -10px;
-  background: #0070f3;
+  background: orangered;
   color: #fff;
   padding: 6px 12px;
   font-size: 0.85rem;
@@ -532,7 +561,7 @@ img, video, iframe {
   margin: 15px 0;
   font-size: 1.8rem;
   font-weight: bold;
-  color: #0070f3;
+  color: orangered;
 }
 .plan-card .price .yearly {
   display: none;
@@ -561,14 +590,14 @@ img, video, iframe {
   padding: 10px 24px;
   font-size: 1rem;
   color: #fff;
-  background: #0070f3;
+  background: orangered;
   border: none;
   border-radius: 4px;
   text-decoration: none;
   transition: background 0.3s, transform 0.2s;
 }
 .plan-card .btn:hover {
-  background: #005bc1;
+  background: black;
   transform: translateY(-2px);
 }
 
@@ -610,114 +639,184 @@ img, video, iframe {
 
 
 
-.benefits-section {
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 30px 20px;
-  background: #f5f8ff;
-  border-radius: 8px;
-  text-align: center;
+/* --- Base styles (your existing CSS) --- */
+    .benefits-section {
+      /* max-width: 800px; */
+      margin: 60px auto;
+      padding: 30px 20px;
+      background: rgb(250, 250, 250);
+      border-radius: 8px;
+      text-align: center;
 
-  /* Fade-in animation */
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInBenefits 0.8s ease-out forwards;
-}
+      /* Fade-in animation */
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInBenefits 0.8s ease-out forwards;
+    }
 
-@keyframes fadeInBenefits {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    @keyframes fadeInBenefits {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-.benefits-section h2 {
-  font-size: 2rem;
-  margin-bottom: 25px;
-  color: #333;
-}
+    .benefits-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 25px;
+      color: orangered;
+    }
 
-.benefits-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
+    .benefits-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
 
-.benefit-item {
-  display: flex;
-  align-items: center;
-  max-width: 300px;
-  background: white;
-  padding: 15px 20px;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transform: scale(0.95);
-  opacity: 0;
-  animation: popIn 0.6s ease-out forwards;
-}
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      /* max-width: 200px; */
+      background: white;
+      padding: 15px 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transform: scale(0.95);
+      opacity: 0;
+      animation: popIn 0.6s ease-out forwards;
+      overflow: hidden; /* needed so sliding text is masked while entering */
+    }
 
-.benefit-item:nth-child(1) { animation-delay: 0.3s; }
-.benefit-item:nth-child(2) { animation-delay: 0.5s; }
-.benefit-item:nth-child(3) { animation-delay: 0.7s; }
-.benefit-item:nth-child(4) { animation-delay: 0.9s; }
-.benefit-item:nth-child(5) { animation-delay: 1.1s; }
+    .benefit-item:nth-child(1) { animation-delay: 0.3s; }
+    .benefit-item:nth-child(2) { animation-delay: 0.5s; }
+    .benefit-item:nth-child(3) { animation-delay: 0.7s; }
+    .benefit-item:nth-child(4) { animation-delay: 0.9s; }
+    .benefit-item:nth-child(5) { animation-delay: 1.1s; }
 
-@keyframes popIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+    @keyframes popIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
 
-.benefit-item .icon {
-  font-size: 1.8rem;
-  margin-right: 12px;
-}
+    .benefit-item .icon {
+      font-size: 1.8rem;
+      margin-right: 12px;
+      flex: 0 0 auto;
+    }
 
-.benefit-item .text {
-  font-size: 1rem;
-  color: #444;
-  text-align: left;
-}
+    /* Make text an inline-block so transforms animate cleanly */
+    .benefit-item .text {
+      display: inline-block;
+      font-size: 1rem;
+      color: #444;
+      text-align: left;
+      transform: translateX(120%); /* start off-screen to the right */
+      /* slide animation applied below with staggered delays */
+      white-space: nowrap; /* optional: prevent wrapping for the nameboard effect */
+    }
 
-/* Media query for mobile / tablet */
-@media only screen and (max-width: 768px) {
-  .benefits-section {
-    padding: 20px 15px;
-  }
+    /* --- Slide-in (nameboard) animation for text --- */
+    @keyframes slideInText {
+      0% {
+        transform: translateX(120%);
+        opacity: 0;
+      }
+      60% {
+        transform: translateX(-6%); /* slight overshoot for natural effect */
+        opacity: 1;
+      }
+      80% {
+        transform: translateX(2%);  /* settle back */
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
 
-  .benefits-section h2 {
-    font-size: 1.6rem;
-  }
+    /* apply the slide animation to each text, staggered to match popIn delays */
+    .benefit-item:nth-child(1) .text { animation: slideInText 0.9s cubic-bezier(.22,.9,.35,1) 0.3s forwards; }
+    .benefit-item:nth-child(2) .text { animation: slideInText 0.9s cubic-bezier(.22,.9,.35,1) 0.5s forwards; }
+    .benefit-item:nth-child(3) .text { animation: slideInText 0.9s cubic-bezier(.22,.9,.35,1) 0.7s forwards; }
+    .benefit-item:nth-child(4) .text { animation: slideInText 0.9s cubic-bezier(.22,.9,.35,1) 0.9s forwards; }
+    .benefit-item:nth-child(5) .text { animation: slideInText 0.9s cubic-bezier(.22,.9,.35,1) 1.1s forwards; }
 
-  .benefits-list {
-    flex-direction: column;
-    gap: 15px;
-  }
+    /* Respect users who prefer reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .benefit-item,
+      .benefit-item .text {
+        animation: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+      }
+    }
 
-  .benefit-item {
-    max-width: 100%;
-    padding: 12px 16px;
-  }
+    /* Media query for mobile / tablet */
+    @media only screen and (max-width: 768px) {
+      .benefits-section {
+        padding: 20px 15px;
+      }
 
-  .benefit-item .icon {
-    font-size: 1.5rem;
-    margin-right: 10px;
-  }
+      .benefits-section h2 {
+        font-size: 1.6rem;
+      }
 
-  .benefit-item .text {
-    font-size: 0.95rem;
-  }
-}
+      .benefits-list {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .benefit-item {
+        max-width: 100%;
+        padding: 12px 16px;
+      }
+
+      .benefit-item .icon {
+        font-size: 1.5rem;
+        margin-right: 10px;
+      }
+
+      .benefit-item .text {
+        font-size: 0.95rem;
+        transform: translateX(80%); /* shorter slide distance on small screens */
+        white-space: normal; /* allow wrapping on small screens */
+      }
+
+      /* different slide keyframes for small screens (using same name but local to media query) */
+      @keyframes slideInText {
+        0% {
+          transform: translateX(80%);
+          opacity: 0;
+        }
+        60% {
+          transform: translateX(-4%);
+          opacity: 1;
+        }
+        80% {
+          transform: translateX(2%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      /* keep the same staggered delays on mobile */
+      .benefit-item:nth-child(1) .text { animation: slideInText 0.9s cubic-bezier(.22,.9,.35,1) 0.3s forwards; }
+      .benefit-item:nth-child(2) .text { animation: slideInText 0.9s cubic-bezier(.22,.9,.35,1) 0.5s forwards; }
+      .benefit-item:nth-child(3) .text { animation: slideInText 0.9s cubic-bezier(.22,.9,.35,1) 0.7s forwards; }
+      .benefit-item:nth-child(4) .text { animation: slideInText 0.9s cubic-bezier(.22,.9,.35,1) 0.9s forwards; }
+      .benefit-item:nth-child(5) .text { animation: slideInText 0.9s cubic-bezier(.22,.9,.35,1) 1.1s forwards; }
+    }
 
 
 
@@ -734,10 +833,10 @@ img, video, iframe {
 
 
 .social-proof-style1 {
-  max-width: 800px;
+  /* max-width: 800px; */
   margin: 60px auto;
   padding: 30px 20px;
-  background: #f0f9ff;
+  background: orangered;
   border-radius: 8px;
   text-align: center;
 
@@ -764,10 +863,10 @@ img, video, iframe {
 }
 
 .proof-item {
-  background: white;
+  /* background: white; */
   padding: 20px;
   border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  /* box-shadow: 0 2px 8px rgba(0,0,0,0.1); */
 
   opacity: 0;
   transform: translateY(10px);
@@ -787,23 +886,23 @@ img, video, iframe {
 .proof-item .number {
   font-size: 2rem;
   font-weight: bold;
-  color: #0070f3;
+  color: white;
 }
 
 .proof-item .label {
   margin-top: 5px;
-  color: #555;
+  color: white;
 }
 
 .proof-item.expert .quote {
   font-style: italic;
-  color: #444;
+  color: white;
 }
 
 .proof-item.expert .author {
   margin-top: 10px;
   font-weight: bold;
-  color: #222;
+  color: white;
 }
 
 .proof-item.certification img {
@@ -856,10 +955,11 @@ img, video, iframe {
 
 
 .social-proof-style2 {
-  max-width: 900px;
-  margin: 60px auto;
+  /* max-width: 900px; */
+  margin: 0 auto;
+  margin-top: -2px;
   padding: 30px 20px;
-  background: #fff8f5;
+  background: orangered;
   border-radius: 8px;
   text-align: center;
 
@@ -876,7 +976,7 @@ img, video, iframe {
 .social-proof-style2 h2 {
   font-size: 2rem;
   margin-bottom: 30px;
-  color: #333;
+  color: white;
 }
 
 /* Carousel style (simple fade between reviews) */
@@ -906,7 +1006,7 @@ img, video, iframe {
 
 .review p {
   font-size: 1rem;
-  color: #444;
+  color: white;
   margin: 0;
 }
 
@@ -914,7 +1014,7 @@ img, video, iframe {
   display: block;
   margin-top: 8px;
   font-weight: bold;
-  color: #222;
+  color: white;
 }
 
 /* Counters */
@@ -927,12 +1027,12 @@ img, video, iframe {
 
 .count-item .count {
   font-size: 2rem;
-  color: #e67e22;
+  color: white;;
 }
 
 .count-item .count-label {
   margin-top: 5px;
-  color: #555;
+  color: white;
 }
 
 /* Logos wall */
@@ -1001,7 +1101,7 @@ img, video, iframe {
 
 
 .faq-section {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 60px auto;
   padding: 20px;
   background: #f9f9f9;
@@ -1038,7 +1138,7 @@ img, video, iframe {
 
 .question {
   width: 100%;
-  background: #fff;
+  background: rgb(248, 134, 92);
   border: none;
   padding: 12px 16px;
   font-size: 1rem;
@@ -1050,22 +1150,22 @@ img, video, iframe {
 }
 
 .question:hover {
-  background: #e6e6e6;
+  background:orangered;
 }
 
 .answer {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, padding 0.3s ease;
-  background: white;
+  background:black;
   padding: 0 16px;
-  border-left: 4px solid #0070f3;
+  border-left: 4px solid red;
   border-radius: 0 0 4px 4px;
 }
 
 .answer p {
   margin: 12px 0;
-  color: #555;
+  color: rgb(240, 162, 17);
   line-height: 1.5;
 }
 
