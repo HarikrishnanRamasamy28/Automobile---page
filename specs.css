@@ -159,6 +159,8 @@ img, video, iframe {
 .navBar {
   display: block;
   background-color:rgb(152, 9, 9) ;
+  /* background-color: orangered; */
+  height: 80px;
   border-top: 1px solid white;
   padding: 10px;
 }
@@ -212,7 +214,8 @@ img, video, iframe {
   transition: background 0.3s, color 0.3s;
 }
 .linkRight li a:hover {
-  color:#f0a500;
+  /* color:#555; */
+  color: #f0a500;
 }
 .linkRight li.sign button {
   background: red;
@@ -257,6 +260,7 @@ img, video, iframe {
   .navBar.active {
     display: block;
     background:rgb(152, 9, 9);
+    height: 60vh;
   }
   .navBar .navLinks {
     padding: 1rem;
@@ -299,6 +303,579 @@ img, video, iframe {
   }
 
 }
+
+
+
+
+
+
+
+
+
+.hero-specs {
+  background: rgb(250, 250, 250);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+
+  /* Animation on load */
+  opacity: 0;
+  transform: scale(0.98);
+  animation: specFadeIn 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+@keyframes specFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.hero-specs .hero-content {
+  max-width: 700px;
+  margin: auto;
+}
+
+.hero-specs h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: orangered;
+
+  /* Pulsing effect on load + small continuous pulse */
+  animation: pulseTitle 2s ease-in-out infinite, specFadeIn 1s ease-out forwards;
+  animation-delay: 0.3s;
+  transform-origin: center center;
+}
+@keyframes pulseTitle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+
+.hero-specs p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.selector-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.selector-group select {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: orangered;
+  color: white;
+
+  /* Let options also fade in a little (optional) */
+  opacity: 0;
+  animation: specFadeIn 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.selector-group .btn-explore {
+  padding: 8px 16px;
+  font-size: 1rem;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  opacity: 0;
+  animation: specFadeIn 1s ease-out forwards;
+  animation-delay: 0.7s;
+}
+
+.selector-group .btn-explore:hover {
+  background: white;
+  border: 1px solid black;
+  color: black;
+}
+
+/* Media query for <= 768px */
+@media only screen and (max-width: 768px) {
+  .hero-specs {
+    padding: 60px 15px;
+  }
+
+  .hero-specs h1 {
+    font-size: 2rem;
+  }
+
+  .hero-specs p {
+    font-size: 1rem;
+  }
+
+  .selector-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .selector-group select,
+  .selector-group .btn-explore {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .selector-group select {
+    margin-bottom: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+.basic-info-section {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 20px 30px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  /* Animation: fade in on load */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.basic-info-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.basic-info-section h3 {
+  font-size: 1.4rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.info-grid,
+.dimensions-grid,
+.weight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.info-item,
+.dim-item,
+.weight-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-weight: bold;
+  color: #666;
+}
+
+.value {
+  margin-top: 4px;
+  color: #333;
+}
+
+@media only screen and (max-width: 768px) {
+  .basic-info-section {
+    padding: 15px 20px;
+  }
+
+  .basic-info-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .basic-info-section h3 {
+    font-size: 1.3rem;
+  }
+
+  .info-grid,
+  .dimensions-grid,
+  .weight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .label {
+    font-size: 0.95rem;
+  }
+
+  .value {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.powertrain-section {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 30px 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+  /* Animation on load */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUpPower 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUpPower {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.powertrain-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #333;
+  text-align: center;
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-item .label {
+  font-weight: bold;
+  color: #666;
+}
+
+.spec-item .value {
+  margin-top: 4px;
+  color: #333;
+}
+
+@media only screen and (max-width: 768px) {
+  .powertrain-section {
+    padding: 20px 15px;
+  }
+  .powertrain-section h2 {
+    font-size: 1.6rem;
+  }
+  .spec-grid {
+    grid-template-columns: 1fr;
+  }
+  .spec-item .label {
+    font-size: 0.95rem;
+  }
+  .spec-item .value {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+.perf-metrics-section {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 30px 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+  /* Animation: fade in on load */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInPerf 0.8s ease-out forwards;
+}
+
+@keyframes fadeInPerf {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.perf-metrics-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #333;
+  text-align: center;
+}
+
+.perf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.perf-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.perf-item .label {
+  font-weight: bold;
+  color: #666;
+}
+
+.perf-item .value {
+  margin-top: 4px;
+  color: #333;
+}
+
+@media only screen and (max-width: 768px) {
+  .perf-metrics-section {
+    padding: 20px 15px;
+  }
+
+  .perf-metrics-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .perf-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .perf-item .label {
+    font-size: 0.95rem;
+  }
+
+  .perf-item .value {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.chassis-section {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 30px 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  /* Animation: fade in on load */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInChassis 0.8s ease-out forwards;
+}
+
+@keyframes fadeInChassis {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chassis-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #333;
+  text-align: center;
+}
+
+.chassis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-item .label {
+  font-weight: bold;
+  color: #666;
+}
+
+.spec-item .value {
+  margin-top: 4px;
+  color: #333;
+}
+
+@media only screen and (max-width: 768px) {
+  .chassis-section {
+    padding: 20px 15px;
+  }
+  .chassis-section h2 {
+    font-size: 1.6rem;
+  }
+  .chassis-grid {
+    grid-template-columns: 1fr;
+  }
+  .spec-item .label {
+    font-size: 0.95rem;
+  }
+  .spec-item .value {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.warranty-section {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 30px 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+  /* Fade-in animation */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInWarranty 0.8s ease-out forwards;
+}
+
+@keyframes fadeInWarranty {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.warranty-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #333;
+  text-align: center;
+}
+
+.warranty-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.warranty-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.warranty-item .label {
+  font-weight: bold;
+  color: #666;
+}
+
+.warranty-item .value {
+  margin-top: 4px;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Responsive for small screens */
+@media only screen and (max-width: 768px) {
+  .warranty-section {
+    padding: 20px 15px;
+  }
+  .warranty-section h2 {
+    font-size: 1.6rem;
+  }
+  .warranty-grid {
+    grid-template-columns: 1fr;
+  }
+  .warranty-item .label {
+    font-size: 0.95rem;
+  }
+  .warranty-item .value {
+    font-size: 1rem;
+  }
+}
+
 
 
 

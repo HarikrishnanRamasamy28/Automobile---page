@@ -159,6 +159,8 @@ img, video, iframe {
 .navBar {
   display: block;
   background-color:rgb(152, 9, 9) ;
+  /* background-color: orangered; */
+  height: 80px;
   border-top: 1px solid white;
   padding: 10px;
 }
@@ -212,7 +214,8 @@ img, video, iframe {
   transition: background 0.3s, color 0.3s;
 }
 .linkRight li a:hover {
-  color:#f0a500;
+  /* color:#555; */
+  color: #f0a500;
 }
 .linkRight li.sign button {
   background: red;
@@ -257,6 +260,7 @@ img, video, iframe {
   .navBar.active {
     display: block;
     background:rgb(152, 9, 9);
+    height: 60vh;
   }
   .navBar .navLinks {
     padding: 1rem;
@@ -300,6 +304,479 @@ img, video, iframe {
 
 }
 
+
+
+
+
+
+
+
+
+
+.hero {
+  background: rgb(250, 250, 250);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 40px;
+
+  /* Add animation on load */
+  animation: jump 1s ease-in-out;
+  animation-fill-mode: both;
+}
+
+/* Keyframes for the jump effect */
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin: 0 0 20px;
+  color: orangered;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin: 0 0 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+  color: #555;
+}
+
+.hero .cta-button {
+  background: orangered;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.hero .cta-button:hover {
+  background: #e6e6e6;
+  transform: translateY(-2px);
+  color: #0050f3;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .hero .cta-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.case-section {
+  /* max-width: 1000px; */
+  margin: 60px auto;
+  background-color: rgb(250, 250, 250);
+}
+
+.case-section h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: #222;
+}
+
+.case-grid {
+  display: grid;
+  /* 3 items per row by default */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.case-section .case-grid .case-item .case-thumb{
+  height: 350px;
+}
+
+
+.case-item {
+  background: orangered;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInUp 0.6s forwards;
+  
+}
+
+/* Staggered animation delay */
+.case-item:nth-child(1) { animation-delay: 0.1s; }
+.case-item:nth-child(2) { animation-delay: 0.2s; }
+.case-item:nth-child(3) { animation-delay: 0.3s; }
+.case-item:nth-child(4) { animation-delay: 0.4s; }
+.case-item:nth-child(5) { animation-delay: 0.5s; }
+.case-item:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.case-thumb {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.case-content {
+  padding: 20px;
+}
+
+.case-content h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.case-content p {
+  margin: 0 0 15px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.case-content .read-more {
+  text-decoration: none;
+  color:white;
+  margin-left: 100px;
+  /* margin-top: 20px; */
+  background: black;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.case-content .read-more:hover {
+  background: #003d80;
+}
+
+/* Media Query for <= 768px */
+@media only screen and (max-width: 768px) {
+  .case-section {
+    margin: 40px 0;
+  }
+  .case-section h1 {
+    font-size: 1.8rem;
+  }
+  .case-content h3 {
+    font-size: 1.1rem;
+  }
+  .case-content p {
+    font-size: 0.9rem;
+  }
+  .case-content .read-more {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+.challenge-section {
+  /* max-width: 800px; */
+  margin: 60px auto;
+  background:orangered;
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
+  /* Animation */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.challenge-section h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  color: #c0392b;
+  width: 700px;
+  margin-left: 400px;
+  color: white;
+  text-decoration: underline;
+  margin-bottom: 20px;
+
+  /* Add pulse animation */
+  animation: pulse 2s infinite ease-in-out;
+  transform-origin: center center;
+}
+
+/* Define the pulse keyframes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.challenge-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  width: 700px;
+  margin-left: 400px;
+  color: white;
+}
+
+.challenge-section .context {
+  /* background: #f0f0f0; */
+  padding: 20px;
+  border-left: 4px solid black;
+  margin-left: 400px;
+  border-radius: 4px;
+}
+
+.challenge-section .context p {
+  margin: 0;
+  color: white;
+   width: 700px;
+  /* margin-left: 400px; */
+}
+
+/* Media query for <= 768px */
+@media only screen and (max-width: 768px) {
+  .challenge-section {
+    padding: 30px 20px;
+    margin: 40px 0;
+  }
+  .challenge-section h2 {
+    font-size: 1.6rem;
+  }
+  .challenge-section p {
+    font-size: 0.95rem;
+  }
+  .challenge-section .context {
+    padding: 15px;
+  }
+}
+
+
+
+
+
+
+
+
+
+.more-stories-section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+  background-color: rgb(250, 250, 250);
+}
+
+.more-stories-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: orangered;
+}
+
+.stories-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.story-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
+}
+
+.story-item:nth-child(1) { animation-delay: 0.1s; }
+.story-item:nth-child(2) { animation-delay: 0.2s; }
+.story-item:nth-child(3) { animation-delay: 0.3s; }
+/* Add more delay rules if you have more items */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.story-item h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.story-item p {
+  margin-bottom: 15px;
+  color: #555;
+  line-height: 1.4;
+}
+
+.story-item .read-more {
+  text-decoration: none;
+  color: #fff;
+  background: orangered;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.story-item .read-more:hover {
+  background:black;
+}
+
+/* Pagination styles */
+.pagination {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.page-btn {
+  background: #e0e0e0;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.page-btn:hover:not([disabled]) {
+  background: #c0c0c0;
+  transform: translateY(-2px);
+}
+
+.page-btn[disabled] {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* Load More Button */
+.load-more-btn {
+  margin-top: 30px;
+  background: orangered;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.load-more-btn:hover {
+  background:black;
+  transform: translateY(-2px);
+}
+
+/* Media Query for ≤ 768px */
+@media only screen and (max-width: 768px) {
+  .stories-list {
+    grid-template-columns: 1fr;
+  }
+
+  .story-item {
+    padding: 15px;
+  }
+
+  .more-stories-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .load-more-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .page-btn {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
 
 
 

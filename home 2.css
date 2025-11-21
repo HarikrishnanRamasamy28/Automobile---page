@@ -1095,7 +1095,7 @@ span{
 
 
 .tools-resources-cards {
-  background: #f7fafc;
+  background:  rgb(250, 250, 250);
   padding: 4rem 1rem;
   color: #333;
   font-family: system-ui, sans-serif;
@@ -1109,13 +1109,13 @@ span{
 
 .tools-resources-cards h2 {
   font-size: 2rem;
-  color: #1f2937;
+  color: orangered;
   margin-bottom: 0.75rem;
 }
 
 .tools-resources-cards .intro {
   font-size: 1.125rem;
-  color: #4a5568;
+  color: #555;
   margin-bottom: 2rem;
 }
 
@@ -1124,6 +1124,16 @@ span{
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
 }
+
+.tools-resources-cards .tool-cards .tool-card:nth-child(n + 1) {
+  /* applies to 2nd, 5th, 8th, … */
+  background-color: #555;
+}
+
+.tools-resources-cards .tool-cards .tool-card:nth-child(even) {
+  background-color: orangered;
+}
+
 
 .tool-card {
   background: #fff;
@@ -1139,14 +1149,15 @@ span{
 }
 
 .tool-card h3 {
+  text-decoration: underline;
   font-size: 1.25rem;
-  color: #2d3748;
+  color:white;
   margin-bottom: 0.75rem;
 }
 
 .tool-card p {
   font-size: 1rem;
-  color: #4a5568;
+  color: white;
   line-height: 1.5;
   margin-bottom: 1rem;
 }
