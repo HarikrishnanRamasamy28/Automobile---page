@@ -14,7 +14,7 @@
     <header class="header">
         <div class="logo">
             <img src="./logo.webp" alt="STACKLY Logo" />
-            <h2>STACKLY</h2>
+            <button onclick="window.location.href='./index.html'"><h2>STACKLY</h2></button>
         </div>
         <div class="contact">
             <li class="signin">
@@ -68,8 +68,12 @@
       <li>Fast charging support</li>
     </ul>
     <div class="hero-buttons">
-      <button class="btn-primary">Explore Models</button>
-      <button class="btn-secondary">Request a Test Drive</button>
+      <button class="btn-primary" 
+        onclick="window.location.href='./404.html'">Explore Models
+      </button>
+      <button class="btn-secondary" 
+        onclick="window.location.href='./404.html'">Request a Test Drive
+      </button>
     </div>
   </div>
   <div class="hero-right">
@@ -331,8 +335,8 @@
   <div class="container">
     <h2>Get Updates</h2>
     <p>Subscribe to our newsletter to get the latest news, offers & tips straight to your inbox.</p>
-    <form class="newsletter-form" action="#" method="POST">
-      <input type="email" name="email" placeholder="Enter your email" required />
+    <form id="newsletterForm" class="newsletter-form" action="#" method="POST" novalidate>
+      <input type="email" id="emailInput" name="email" placeholder="Enter your email" required />
       <button type="submit">Subscribe</button>
     </form>
     <p class="newsletter-note">No spam. Unsubscribe anytime.</p>
@@ -432,6 +436,11 @@
 
 
 <footer class="auto-footer">
+
+  <div class="logo">
+      <img src="./logo.webp" alt="STACKLY Logo" />
+      <button onclick="window.location.href='./index.html'"><h2>STACKLY</h2></button>
+  </div>
 
   <div class="footer-content">
     <div class="footer-col about">

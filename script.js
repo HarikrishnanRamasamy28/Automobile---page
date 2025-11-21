@@ -36,6 +36,29 @@ hamburger.addEventListener("click", () => {
 
 
 
+/* subscribe button js code */
+
+const form = document.getElementById('newsletterForm');
+  const emailInput = document.getElementById('emailInput');
+
+  form.addEventListener('submit', function(event) {
+    // Prevent default submit
+    event.preventDefault();
+
+    // Check if form is valid using HTML5 validation API
+    if (form.checkValidity()) {
+      // If valid, redirect
+      window.location.href = './404.html';
+    } else {
+      // If not valid, show the browser's default validation UI
+      emailInput.reportValidity();  
+      // Or you can show a custom message / UI
+    }
+  });
+
+
+
+
 
 
 
