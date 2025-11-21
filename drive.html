@@ -14,7 +14,7 @@
     <header class="header">
         <div class="logo">
             <img src="./logo.webp" alt="STACKLY Logo" />
-            <h2>STACKLY</h2>
+            <button onclick="window.location.href='./index.html'"><h2>STACKLY</h2></button>
         </div>
         <div class="contact">
             <li class="signin">
@@ -67,8 +67,8 @@
       </p>
 
       <div class="td-cta" role="group" aria-label="Primary actions">
-        <a class="btn-primary" href="#booking">Book a Test Drive</a>
-        <a class="btn-outline" href="#models">View Models</a>
+        <a class="btn-primary" href="./404.html">Book a Test Drive</a>
+        <a class="btn-outline" href="./404.html">View Models</a>
       </div>
 
       <ul class="td-features" aria-hidden="false">
@@ -200,7 +200,7 @@
 <section class="booking-form-section">
   <div class="container">
     <h2>Book a Test Drive</h2>
-    <form class="booking-form" action="#" method="POST">
+    <form id="bookingForm" class="booking-form" action="#" method="POST" novalidate>
       <div class="form-row">
         <div class="form-group">
           <label for="name">Full Name</label>
@@ -224,7 +224,6 @@
             <option value="Model X">Model X</option>
             <option value="Model Y">Model Y</option>
             <option value="Model Z">Model Z</option>
-            <!-- Add more models as required -->
           </select>
         </div>
       </div>
@@ -247,7 +246,6 @@
           <option value="Downtown">Downtown</option>
           <option value="Uptown">Uptown</option>
           <option value="Suburban">Suburban</option>
-          <!-- Add more branches as needed -->
         </select>
       </div>
 
@@ -276,6 +274,11 @@
 
 
 <footer class="auto-footer">
+
+  <div class="logo">
+      <img src="./logo.webp" alt="STACKLY Logo" />
+      <button onclick="window.location.href='./index.html'"><h2>STACKLY</h2></button>
+  </div>
 
   <div class="footer-content">
     <div class="footer-col about">

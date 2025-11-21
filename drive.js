@@ -36,3 +36,31 @@ hamburger.addEventListener("click", () => {
       });
     });
   });
+
+
+
+
+
+
+
+
+
+/* js for book test drive */
+
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('bookingForm');
+
+  form.addEventListener('submit', function(event) {
+    // Prevent the default form submission
+    event.preventDefault();
+
+    // Check if form is valid using HTML5 validation API
+    if (form.checkValidity()) {
+      // If all fields are valid → redirect to 404 page
+      window.location.href = './404.html';
+    } else {
+      // If not valid → show validation UI
+      form.reportValidity();  // This shows which field is invalid
+    }
+  });
+});
