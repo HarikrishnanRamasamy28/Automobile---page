@@ -677,6 +677,9 @@ span{
     font-size: 1.75rem;
     margin-bottom: 2rem;
   }
+  .story-card {
+    gap: 30px;
+  }
   .story-images {
     height: 140px;
   }
